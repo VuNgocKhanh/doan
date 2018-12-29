@@ -1,0 +1,29 @@
+page-create-donor {
+  ion-row {
+    border-bottom: 1px solid rgba($color: map-get($map: $appColors, $key: lightgray), $alpha: 1);
+  }
+  #avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #save {
+    padding-top: 30px;
+  }
+  #save>button {
+    background: white;
+    color: black;
+    border: 1px solid gray;
+    padding-left: 25%;
+    padding-right: 25%;
+    border-radius: 20px;
+  }
+  #text {
+    margin: 10px 0;
+    color: gray;
+  }
+}

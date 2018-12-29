@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+                <ion-icon name="ios-arrow-back-outline" class="big-font"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Danh sách thẻ phạt</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    
+    <top-card [cardList]="mCardList" (clickPlayer)="onClickPlayerInfo($event)"></top-card>
+
+    <ion-infinite-scroll *ngIf="nextPage > page" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

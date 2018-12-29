@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline" class="big-font"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Ý kiến đóng góp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>Chức năng</ion-card-header>
+    <ion-card-content>
+      <ion-input class="border a1-padding-left" placeholder="Điền chức năng cần phản ánh" [(ngModel)]="name"></ion-input>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Nội dung phản ánh</ion-card-header>
+    <ion-card-content>
+      <ion-textarea class="border a1-padding-left" autosize rows="5" placeholder="Điền nội dung cần phản ánh" [(ngModel)]="function"></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="a3-container-center">
+    <button [disabled]="function.length==0&&feedback.length==0" ion-button round outline (click)="sendFeedback()">Gửi phản
+      hồi</button>
+  </div>
+</ion-content>

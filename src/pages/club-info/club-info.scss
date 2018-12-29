@@ -1,0 +1,23 @@
+page-club-info {
+    .club-logo{
+        height: 48px;
+        width: 48px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+    }
+    .club-leave{
+        color: map-get($map: $appColors, $key: red)
+    }
+    .club-menu{
+        padding: 8px 10px 8px 10px;
+        border-bottom: 1px solid #F5F4F4;
+    }
+    .margin-top-10{
+        margin-top: 10px;
+    }
+    .club-menu:last-child{
+        margin-top: 10px;
+        border-bottom: none;
+    }
+}

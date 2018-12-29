@@ -1,0 +1,113 @@
+{
+    "version": "1.0.0",
+    "name": "Bóng Đá 69",
+    "config": {
+        "get_config": true,
+        "android": "http://p2o.wiimob.com/appinasia/config/test_bongdaphui_android_1.json",
+        "ios": "http://p2o.wiimob.com/appinasia/config/test_bongdaphui_ios_1.json"
+    },
+    "user": {
+        "userName": "",
+        "avatar": "",
+        "phoneNumber": "+84973618295",
+        "facebookID": "100001372898897",
+        "type_login": 1
+
+    },
+    "social": {
+        "facebook": "",
+        "twiter": "",
+        "google_plus": "",
+        "google_play": "",
+        "apple_store": ""
+    },
+    "onesignal": {
+        "enable": true,
+        "app_id": "bfec5fc3-b0c0-4d32-a80d-f32c2331690d",
+        "project_number": "893836876426",
+        "default_onesignal_id": "22d2f455-7a9c-4fb1-9b0f-s382sja22"
+    },
+    "analytics": {
+        "enable": false,
+        "project_id": ""
+    },
+    "network": {
+        "enable": true,
+        "wifi_macaddress_default": "c0:25:e9:41:71:ba",
+        "wifi_ip_address_default": "172.17.17.128",
+        "resources": "http://"
+    },
+    "device": {
+        "uuid_default": "",
+        "name_default": "Web"
+    },
+    "ads": {
+        "enable": false,
+        "platform": "android",
+        "android": {
+            "banner": {
+                "id": "ca-app-pub-5504805357330554/3621021447",
+                "isTesting": false,
+                "autoShow": true,
+                "overlap": true
+            },
+            "interstitial": {
+                "id": "ca-app-pub-5504805357330554/5663541484",
+                "isTesting": false,
+                "autoShow": false
+            }
+        },
+        "ios": {
+            "banner": {
+                "id": "ca-app-pub-5504805357330554/9483366996",
+                "isTesting": false,
+                "autoShow": true,
+                "overlap": true
+            },
+            "interstitial": {
+                "id": "ca-app-pub-5504805357330554/7081878012",
+                "isTesting": false,
+                "autoShow": false
+            }
+        }
+    },
+    "smartfox": {
+        "smartfox_server": "smartfox_test_online",
+        "smartfox_primary": {
+            "host": "server.bongda69.online",
+            "port": 9000,
+            "zone": "Bd69Zone",
+            "debug": true
+        },
+        "smartfox_test": {
+            "host": "192.168.1.33",
+            "port": 8887,
+            "zone": "Bd69Zone",
+            "debug": true
+        },
+        "smartfox_test_online": {
+            "host": "125.212.192.94",
+            "port": 9000,
+            "zone": "Bd69Zone",
+            "debug": true
+        }
+    },
+    "http": {
+        "debug": false,
+        "client_id": "",
+        "client_secret": "",
+        "client_key": "",
+        "api_server": "api_test",
+        "api_primary": {
+            "host": ""
+        },
+        "api_test": {
+            "host": ""
+        }
+    },
+    "rootpage": {
+        "0": "TabsPage",
+        "1": "LeagueManagerPage",
+        "2": "ManagerAppPage"
+    }
+}

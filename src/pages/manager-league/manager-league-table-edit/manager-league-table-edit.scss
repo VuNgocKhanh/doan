@@ -1,0 +1,40 @@
+page-manager-league-table-edit {
+  ion-label {
+    flex: auto;
+  }
+  .p-container-scroll {
+    overflow: auto;
+    padding: 10px 0;
+    .p-item {
+      text-align: center;
+      cursor: pointer;
+      margin-left: 10px;
+      width: 20vw;
+    }
+    .p-club-logo {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin: auto;
+      border: 2px solid white;
+      opacity: .4;
+      img {
+        max-height: 40px;
+        border-radius: 50%;
+      }
+      &.selected {
+        border: 2px solid map-get($map: $appColors, $key: green);
+        opacity: 1;
+      }
+    }
+    .p-name-club {
+      margin-top: 6px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  .inline-block {
+    display: inline-block;
+  }
+}

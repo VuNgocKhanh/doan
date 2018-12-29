@@ -1,0 +1,31 @@
+<ion-content>
+    <div class="a1-container-absolute" navPop></div>
+    <!-- <div class="card-box white-background">
+        <div class="card-league a1-text-center semi-font a1-text-uppercase">{{league}}</div>
+        <div class="card-title a1-text-center normal-font a1-text-uppercase primary-background white-color">{{title}}</div>
+        <ion-row class="player-box">
+            <ion-col col-3>
+                <div class="player-avatar" [ngStyle]="{'background-image':'url('+player_avatar+')'}"></div>
+            </ion-col>
+            <ion-col col-9>
+                <div class="a3-container a3-justify-start a3-items-center">
+                    <div>
+                        <div>
+                            <span class="semi-font">{{name}}</span>
+                            <span class="normal-font font-weight-bold a1-text-capitalize">&ensp;{{mPlayer.getName()}}</span>
+                        </div>
+                        <div style="margin-top: 4px">
+                            <span class="semi-font">{{club}}</span>
+                            <span class="semi-font font-weight-bold a1-text-capitalize">&ensp;{{player_club}}</span>
+                        </div>
+                        <div style="margin-top: 4px">
+                            <span class="semi-font">{{birth}}</span>
+                            <span class="semi-font">&ensp;{{player_birth}}</span>
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </div> -->
+    <player-card [data]="mUser"></player-card>
+</ion-content>

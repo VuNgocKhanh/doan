@@ -1,0 +1,32 @@
+<!-- Generated template for the TimeComponent component -->
+<div>
+    <div class="time-container a3-container a3-justify-center">
+        <div class="m-hour">
+          <div class="m-header">
+            Giờ
+          </div>
+          <div class="m-scroll-container" id="hourID">
+            <div class="m-item"></div>
+            <div class="m-item" *ngFor="let hour of mHours" [class.selected]="hour == mHours[mCenterIndexs[0]]">
+              <span *ngIf="hour < 10">0</span>
+              <span>{{hour}}</span>
+            </div>
+            <div class="m-item"></div>
+          </div>
+        </div>
+        <div class="m-dot">:</div>
+        <div class="m-minute">
+          <div class="m-header">
+            Phút
+          </div>
+          <div class="m-scroll-container" id="minuteID">
+            <div class="m-item"></div>
+            <div class="m-item" *ngFor="let min of mMinutes" [class.selected]="min == mMinutes[mCenterIndexs[1]]">
+              <span *ngIf="min < 10">0</span>
+              <span>{{min}}</span>
+            </div>
+            <div class="m-item"></div>
+          </div>
+        </div>
+      </div>
+</div>

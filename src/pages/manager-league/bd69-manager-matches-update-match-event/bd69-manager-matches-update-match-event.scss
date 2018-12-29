@@ -1,0 +1,114 @@
+page-bd69-manager-matches-update-match-event {
+  ion-content.content {
+    background: #F8F8F8;
+  }
+  .white-container {
+    background: white;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+    .match-container {
+      padding: 10px 0;
+      border-bottom: 1px solid #f4f4f4;
+      .time-start {
+        font-size: 1.4em;
+      }
+      .logo-club {
+        height: 36px;
+        width: 36px;
+        img {
+          max-height: 36px;
+        }
+      }
+      .name-club-home {
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .name-club-away {
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .match-container:last-child {
+      border: none;
+    }
+  }
+  @media (min-width: 375px) {
+    .time-start {
+      font-size: 1.8em !important;
+    }
+  } //   ====================
+  .a-scroll-container {
+    background: white;
+    padding: 12px 0;
+    overflow: auto;
+    border-bottom: 1px solid #f4f4f4;
+    .a-item {
+      display: inline-block;
+      min-width: 50%;
+      text-align: center;
+      color: gray;
+      font-size: 1.6rem;
+      border-right: 1px solid;
+      &.selected {
+        color: #37a485;
+        font-weight: bold;
+      }
+      &.item-disabled {
+        opacity: .4;
+      }
+    }
+    .a-item:last-child {
+      border: none;
+    }
+  }
+  .space {
+    height: 6px;
+    background: #F8F8F8;
+  }
+  .row-event {
+    padding: 10px 0;
+    background: transparent;
+    &.smoke {
+      background: #f4f4f4;
+    }
+    .event-name {}
+    .event-icon {}
+    .time {}
+  }
+  .a-item-container {
+    background: white;
+    border-top: 1px solid #f4f4f4;
+    padding: 10px 0;
+  }
+  .item-icon {}
+  .item-name {
+    margin-top: 4px;
+  }
+  .club-name {
+    display: inline-block;
+    padding: 6px 12px;
+    color: gray;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+    opacity: .6;
+    margin: 0 10px;
+    &.selected {
+      color: map-get($map: $appColors, $key: black);
+      font-weight: bold;
+      border: 1px solid gray;
+      opacity: 1;
+    }
+    &.border-left {
+      // border-left: 1px solid map-get($map: $appColors, $key: black);
+    }
+  }
+  .border-bottom {}
+  .event-speciall{
+    padding: 10px 0;
+    color: map-get($map: $appColors, $key: green);
+    &.smoke {
+      background: #f4f4f4;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+page-manager-member {
+    .btn-tools {
+        background-color: map-get($map: $appColors, $key: toolbar)
+    }
+    .btn-tool {
+        width: 10rem;
+        padding: 5px 0 5px 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        text-align: center;
+        color: white;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    .is-choose {
+        background-color: white;
+        color: black;
+    }
+    .btn {
+        padding: 4px 10px;
+        border-radius: 5px;
+        font-size: map-get($map: $appSizes, $key: small);
+        min-width: 60px;
+        text-align: center;
+        &.btn-accept {
+            background: map-get($map: $appColors, $key: green);
+            color: white;
+            border: 1px solid map-get($map: $appColors, $key: green);
+        }
+        &.btn-deline {
+            border: 1px solid gray;
+            color: map-get($map: $appColors, $key: black);
+            margin-left: 10px;
+        }
+    }
+
+    .type{
+        height: 16px;
+        width: 16px;
+    }
+    .user-type{
+        height: 100% !important;
+        width: 100% !important;
+    }
+}

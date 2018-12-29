@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline" class="big-font"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Hỏi đáp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item no-lines *ngFor="let question of mQuestion; let i = index">
+      <button class="semi-font" ion-item (click)="showhideQuestion(i)">{{question.question}}</button>
+      <h2 [hidden]="click!=i" style="white-space: pre-wrap; font-size: 1.2rem; padding: 10px;">{{question.answer}}</h2>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

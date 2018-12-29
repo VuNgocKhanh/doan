@@ -1,0 +1,54 @@
+<!--
+  Generated template for the NotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goToSearch()">
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title (click)="scrollToTop()">Thông báo</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="mNotifications.length == 0" class="no_noti big-font">
+
+    <div style="padding-top: 20vh">
+      <div padding text-center>
+        <img style="max-width: 60vw;" src="./assets/imgs/no-notification.png">
+      </div>
+      <div text-center>No notification yet!</div>
+    </div>
+
+  </div>
+  <ion-list>
+    <button ion-item *ngFor="let item of mNotifications" [class.notify-read]="item.getState()==0" [class.notify-unread]="item.getState()==1"
+      (click)="onClickNotification(item)" detail-none>
+      <ion-avatar item-start tappable>
+        <img class="gray-background" [src]="item.senderAvatar? item.senderAvatar : './assets/imgs/logo_club.png'" alt="">
+      </ion-avatar>
+      <div class="semi-font">
+        <span style="font-weight: bold">{{item.senderName}}</span>
+        <span [innerHtml]="item.message"></span>
+      </div>
+      <div class="small-font gray-color">{{item.getTime()}}</div>
+      <button ion-button clear icon-only item-end class="big-font btn-more" padding (click)="showActionSheet(item,$event)">
+        <ion-icon style="color: black" name="more"></ion-icon>
+      </button>
+    </button>
+  </ion-list>
+  <div id="paddingDisConnect"></div>
+
+</ion-content>

@@ -1,0 +1,41 @@
+<!-- Generated template for the Bd69TableComponent component -->
+<!-- <div> -->
+
+
+<div class="mode-table">
+    <table style="width: 100%">
+        <tr class="header-table">
+            <th>STT</th>
+            <th class="name-club">Đội bóng</th>
+            <th>P</th>
+            <th>W</th>
+            <th>L</th>
+            <th>D</th>
+            <th class="xs-hidden">GF</th>
+            <th class="xs-hidden">GA</th>
+            <th class="xs-hidden">Y</th>
+            <th class="xs-hidden">R</th>
+            <th>+/-</th>
+            <th>P</th>
+        </tr>
+        <tr *ngFor="let club of mTables; let i = index" class="content-table" [class.smoke]="i%2 == 1" (click)="onClickOnTable(club)">
+            <td>{{i+1}}</td>
+            <td class="a1-relative name-club">
+                <div class="a3-container a3-items-center">
+                    <div class="logo background-image" [ngStyle]="{'background-image': club.logo ? 'url('+club.logo+')' : 'url(./assets/default/club_logo_default.png)'}"></div>
+                    <div class="club-name">{{club.name}}</div>
+                </div>
+            </td>
+            <td>{{club.played}}</td>
+            <td>{{club.won}}</td>
+            <td>{{club.lost}}</td>
+            <td>{{club.drawn}}</td>
+            <td class="xs-hidden">{{club.goalsFor}}</td>
+            <td class="xs-hidden">{{club.goalsAgainst}}</td>
+            <td class="xs-hidden">{{club.yellowCardNumber}}</td>
+            <td class="xs-hidden">{{club.redCardNumber}}</td>
+            <td>{{club.goalsFor-club.goalsAgainst}}</td>
+            <td>{{club.points}}</td>
+        </tr>
+    </table>
+</div>

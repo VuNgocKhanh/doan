@@ -1,0 +1,22 @@
+page-notification {
+    ion-label {
+        white-space: normal;
+    }
+    .notify-unread {
+        background-color: ghostwhite;
+    }
+    .notify-read {
+        background-color: white;
+    }
+    .no_noti {
+        height: 100%;
+        opacity: 0.3;
+    }
+    .icon-noti {
+        font-size: 80px;
+        margin-bottom: 15px;
+    }
+    .btn-more {
+        height: 40px !important;
+    }
+}

@@ -1,0 +1,72 @@
+<!--
+  Generated template for the ManagerAdminLeaguePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Danh sách ban tổ chức</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="onClickAdd()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-searchbar [(ngModel)]="searchQuery" (ionClear)="onLoadData()" (ionInput)="onInput()" (keyup.enter)="onClickSearch(true)"></ion-searchbar>
+
+    <ion-list>
+        <ion-item *ngFor="let user of mListUser; let i= index" (click)="onClickItem(user)">
+            <div class="stt" item-start>
+                {{i+1}}.
+            </div>
+            <ion-avatar item-start>
+                <img [src]="user.avatar || './assets/imgs/no-image.png'" alt="">
+            </ion-avatar>
+
+            <ion-label>
+                <div class="normal-font mleague-name">
+                    <strong>{{user.name}}</strong>
+                </div>
+
+                <!-- <div class="a3-container a3-justify-between a3-items-end">
+          <div class="sub-title small-font gray-color">
+            Trận đấu: {{referee.numberMatch}}
+          </div>
+
+          <div class="sub-title small-font gray-color">
+            Liên hệ : {{referee.phone || 'Chưa cập nhật'}}
+          </div>
+        </div> -->
+
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <div class="empty-state a1-relative" [hidden]="mListUser.length > 0">
+        <div class="a1-absolute bottom gray-color" padding text-center>Kết quả tìm kiếm rỗng</div>
+    </div>
+
+    <ion-infinite-scroll *ngIf="nextPage >= page" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

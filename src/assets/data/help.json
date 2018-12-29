@@ -1,0 +1,153 @@
+{
+    "title": "Câu hỏi thường gặp",
+    "list_question": [
+        {
+            "id": 0,
+            "icon": "",
+            "icon-color": "",
+            "title": "Chức năng cơ bản",
+            "description": "Dành cho người bắt đầu",
+            "content": [
+                {
+                    "id": 0,
+                    "question": "Đăng nhập và tạo tài khoản như thế nào?",
+                    "answer": "Đăng nhập bằng facebook hoặc số điện thoại"
+                },
+                {
+                    "id": 1,
+                    "question": "Làm thế nào để xem thông tin của tôi?",
+                    "answer": "Trong tab user, nhấp vào thanh profile ở trên cùng màn hình sẽ chuyển tới màn hình thông tin người dùng"
+                },
+                {
+                    "id": 2,
+                    "question": "Sử dụng mục tìm kiếm như thế nào?",
+                    "answer": "Các mục tìm kiếm bao gồm: Tìm kiếm câu lạc bộ, giải đấu, cầu thủ, sân vận động."
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "icon": "",
+            "icon-color": "",
+            "title": "Chức năng của player",
+            "description": "Dành cho người bắt đầu",
+            "content": [
+                {
+                    "id": 0,
+                    "question": "Tham gia câu lạc bộ như thế nào?",
+                    "answer": ".... ...."
+                },
+                {
+                    "id": 1,
+                    "question": "Nhận hồ sợ của đội bóng như thế nào",
+                    "answer": ".... ..."
+                },
+                {
+                    "id": 2,
+                    "question": "Yêu cầu chỉnh sửa hồ sơ như thế nào",
+                    "answer": "...."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "icon": "",
+            "icon-color": "",
+            "title": "Chức năng của người quản lý câu lạc bộ",
+            "description": "Dành cho người quản lý câu lạc bộ",
+            "content": [
+                {
+                    "id": 0,
+                    "question": "Chỉnh sửa thông tin",
+                    "answer": "Người dụng nếu là quản lý câu lạc bộ có thể thay đổi các thông tin cơ bản của câu lạc bộ như tên câu lạc bộ, logo, cover. Người quản lý không thể xóa câu lạc bộ của mình, cũng không thể tạo mới câu lạc bộ"
+                },
+                {
+                    "id": 1,
+                    "question": "Cập nhật thành viên",
+                    "answer": "Người quản lý có thể thêm, xóa thành viên khỏi giải đấu, có thể chọn các thành viên khác làm đội trưởng hoặc hủy đội trưởng"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "icon": "",
+            "icon-color": "",
+            "title": "Chức năng của lãnh đội trong giải đấu",
+            "description": "Dành cho người quản lý câu lạc bộ trong giải đấu",
+            "content": [
+                {
+                    "id": 0,
+                    "question": "Thao tác với các thành viên trong câu lạc bộ",
+                    "answer": "Loại user này có thể xóa thành viên khỏi câu lạc bộ, thêm thành viên từ trong câu lạc bộ quản lý hoặc thêm thành viên khác không nằm trong câu lạc bộ quản lý"
+                },
+                {
+                    "id": 1,
+                    "question": "Xác nhận biên bản trận đấu",
+                    "answer": "Xác nhận biên bản trận đấu khi một trận đấu kết thúc, hệ thống sẽ yêu câu người dùng này xác nhận biên bản trận đâu"
+                },
+                {
+                    "id": 2,
+                    "question": "Cập nhật hồ sơ cầu thủ",
+                    "answer": "Duyệt hồ sơ của các câu thủ tham gia giải đấu"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "icon": "",
+            "icon-color": "",
+            "title": "Chức năng của bản tổ chức giải đấu",
+            "description": "Dành cho người tổ chức giải đấu",
+            "content": [
+                {
+                    "id": 0,
+                    "question": "Trở thành ban tổ chức giải đấu",
+                    "answer": "Đăng ký trực tiếp với BQT với các thông tin yêu cầu do BQT quy định"
+                },
+                {
+                    "id": 1,
+                    "question": "Các chức năng của ban tổ chức",
+                    "answer": "Thêm đội bóng, tạo trận đấu, thêm cầu thủ, thêm trọng tài, thêm sân bóng, thêm giám sát viên, tạo thông báo, thêm điều lệ giải đấu."
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "icon": "",
+            "icon-color": "",
+            "title": "Liên kết tài khoản",
+            "description": "",
+            "content": [
+                {
+                    "id": 0,
+                    "question": "Liên kết với mạng xã hội nào?",
+                    "answer": "Có thể liên kết với tài khoản facebook"
+                },
+                {
+                    "id": 1,
+                    "question": "Sau khi liên kết thành công",
+                    "answer": "Liên kết thành công với facebook sẽ được cập nhật tên, avatar theo tài khoản của facebook"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "icon": "",
+            "icon-color": "",
+            "title": "Bảo mật tài khoản",
+            "description": "",
+            "content": [
+                {
+                    "id": 0,
+                    "question": "Cách đổi mật khẩu?",
+                    "answer": "Chức năng đang trong giai đoạn phát triển"
+                },
+                {
+                    "id": 1,
+                    "question": "Cập nhật email như thế nào?",
+                    "answer": "Chức năng đang trong giai đoạn phát triển"
+                }
+            ]
+        }
+    ]
+}

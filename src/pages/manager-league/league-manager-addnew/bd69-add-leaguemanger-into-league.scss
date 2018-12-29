@@ -1,0 +1,41 @@
+page-bd69-add-leaguemanger-into-league {
+  .btn-search {
+    text-transform: capitalize !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: map-get($map: $appColors, $key: primary);
+    color: white;
+    border-radius: 5px;
+  }
+  .btn-add {
+    background: map-get($map: $appColors, $key: primary);
+    color: white;
+    padding: 10px !important;
+    margin: 0 !important;
+    text-transform: unset !important;
+    &.remove {
+      background: map-get($map: $appColors, $key: red);
+    }
+  }
+  button[disabled],
+  [ion-button][disabled] {
+    background: white;
+    color: black;
+    box-shadow: none;
+  }
+  .searchbar-ios {
+    background: white;
+    border: none !important;
+    padding: 6px;
+  }
+  .searchbar-ios .searchbar-input {
+    border: 1px solid lightgray;
+    height: 4rem;
+  }
+  .searchbar-ios .searchbar-search-icon {
+    top: 13px;
+  }
+  .button-ios {
+    height: 2.3em;
+  }
+}

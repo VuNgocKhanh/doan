@@ -1,0 +1,102 @@
+page-view-club {
+    ion-content.content {
+        background-color: whitesmoke;
+    }
+    .margin-top {
+        margin-top: 10px;
+    }
+    .lazyloadContentOverlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+    }
+    .camera {
+        right: 10px;
+        bottom: 10px;
+        padding: 6px 16px;
+        opacity: .6;
+        text-align: center;
+        border-radius: 5px;
+        background: rgba($color: white, $alpha: .6);
+    }
+    .club-cover {
+        height: 30vh;
+        width: 100%;
+    }
+    .name-container {
+        background-color: white;
+        padding-bottom: 16px;
+        padding-top: 40px;
+    }
+    .btn-viewall {
+        background-color: map-get($map: $appColors, $key: green);
+        color: white;
+        height: 2em;
+    }
+    .admin-tool {
+        background: whitesmoke;
+    }
+    .avatar-camera {
+        opacity: 0.6;
+        padding: 2px 6px;
+    }
+    .club-logo {
+        left: 50%;
+        bottom: 0;
+        height: 80px;
+        width: 80px;
+        transform: translate(-50%, 30%);
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+    }
+    .member-avatar {
+        height: 2.5rem;
+        width: 2.5rem;
+        // border: 1px solid lightgray;
+        border-radius: 50%;
+        margin: 0.1rem;
+        &.more {
+            border: 1px solid black;
+        }
+    }
+    .tool-item {
+        padding: 5px;
+        width: 30%;
+    }
+    .is-choose {
+        color: map-get($map: $appColors, $key: green);
+    }
+    .fake-search {
+        color: rgb(200, 200, 200);
+        border-radius: 20px;
+        padding: 10px 0;
+        background: #292F3A;
+        margin: 6px 1rem;
+    }
+    .btn-joinclub {
+        background-color: map-get($map: $appColors, $key: green);
+        color: white;
+        height: 2.6em;
+    }
+    .club-name {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .cancel-request {
+        background-color: map-get($map: $appColors, $key: red);
+        color: white;
+    }
+
+    .last-item-avatar{
+        border-radius: 50%;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba($color: black, $alpha: .5)
+    }
+}

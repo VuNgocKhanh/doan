@@ -1,0 +1,29 @@
+page-manager-user-add {
+    .avatar{
+        height: 10rem;
+    }
+    .club-logo{
+        height: 100px;
+        width: 100px;
+        margin: auto;
+    }
+    .btn-create{
+        background: map-get($map: $appColors, $key: primary);
+        border-radius: 32px;
+        color: white;
+        min-width: 50%;
+        margin: 16px auto;
+    }
+    .btn-camera{
+        height: 40px;
+        width: 40px;
+        background: whitesmoke;
+        color: black;
+        right: 0;
+        top: 50%;
+        transform: translate(100%,-50%);
+    }
+    .item{
+        border-bottom: .55px solid #dbd7d7;
+    }
+}

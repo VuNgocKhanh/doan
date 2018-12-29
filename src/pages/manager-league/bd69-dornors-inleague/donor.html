@@ -1,0 +1,61 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Quản lí nhà tài trợ</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="onClickAdd()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionClear)="clearQuery()" (ionInput)="onInput()" (keyup.enter)="onClickSearch()"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let dornor of mDornorList; let i = index" (click)="onClickItem(dornor)">
+
+            <div item-start class="stt">
+                {{i+1}}.
+            </div>
+            <ion-avatar item-start>
+                <img [src]="dornor.logo || './assets/imgs/no-image.png'" alt="">
+            </ion-avatar>
+
+            <ion-label>
+                <div class="normal-font mleague-name">
+                    <strong>{{dornor.name}}</strong>
+                </div>
+
+                <div class="a3-container a3-justify-between a3-items-end">
+                    <div class="sub-title small-font gray-color">
+                        Giải đấu: {{dornor.getNumberLeague()}}
+                    </div>
+                </div>
+
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <div class="empty-state a1-relative" [hidden]="mDornorList.length > 0">
+        <div class="a1-content-bottom a1-absolute">
+            <div padding class="gray-color semi-font" text-center *ngIf="showTextNoDornor">Chưa có nhà tài trợ trong giải đấu</div>
+            <div padding class="gray-color semi-font" text-center *ngIf="showTextNoResult">Không có kết quả tìm kiếm</div>
+        </div>
+    </div>
+
+    <ion-infinite-scroll *ngIf="nextPage > 0" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,17 @@
+accept-deline {
+  .btn {
+    height: unset;
+    min-height: 2em;
+    border-radius: 20px;
+    width: 100%;
+    &.accept {
+      background: #02B21F;
+      color: white;
+    }
+    &.deline {
+      background: #EF395C;
+      color: white;
+    }
+  }
+  
+}

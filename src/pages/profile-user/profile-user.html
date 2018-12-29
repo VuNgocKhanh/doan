@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Hồ sơ cầu thủ</ion-title>
+
+    <ion-buttons right *ngIf="!isEdit">
+      <button ion-button icon-only (click)="goToEditProfile()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="empty-state a1-relative" *ngIf="mListItemModel.length == 0">
+    <div class="gray-color large-font a1-absolute a1-content-bottom" text-center padding>Giải đấu chưa cập nhật form hồ sơ</div>
+  </div>
+
+  <div class="a1-relative" text-center *ngIf="isHaveAvatar">
+    <div tappable (click)="onClickAvatar()" class="background-image circle user-avatar" [ngStyle]="{'background-image':avatar ? 'url('+getNormalizeImage(avatar)+')' : 'url(./assets/imgs/no-image.png)'}"></div>
+    <div class="semi-font">Ảnh đại diện</div>
+  </div>
+
+  <ion-list margin-top style="margin-bottom: 0">
+    <ion-item *ngFor="let item of mListItemModel" (click)="onClickDateOfBirth(item)" tappable>
+      <ion-label class="semi-font gray-color">{{item.item.name}}</ion-label>
+      <ion-input type="{{item.type}}" [disabled]="typeLeague == 1 || item.item.type == 3 || item.item.type == 10 || !isEdit" (input)="onInput()"
+        [(ngModel)]="item.value" *ngIf="item.item.type != 5"></ion-input>
+      <div item-end *ngIf="item.item.type == 8">cm</div>
+      <div item-end *ngIf="item.item.type == 9">kg</div>
+      <ion-select [(ngModel)]="item.value" [disabled]="typeLeague == 1 || !isEdit" (ionChange)="getChange($event)" *ngIf="item.item.type == 5">
+        <ion-option *ngFor="let option of options" value="{{option.positionID}}">
+          {{option.name}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <div class="a1-relative border-top" *ngIf="isHaveCMND">
+    <ion-row align-items-center class="padding-6">
+      <ion-col col-8 style="padding-left: 0;">
+        <div class="semi-font gray-color a1-nowrap">Ảnh CMND mặt trước</div>
+      </ion-col>
+      <ion-col col-4 text-right>
+        <ion-icon (click)="onClickAddImageCMNDForce()" tappable name="image" [hidden]="imageCMNDForce && imageCMNDForce.length > 0"></ion-icon>
+        <div class="a3-container a3-items-center a3-justify-end" [hidden]="!imageCMNDForce || imageCMNDForce.length == 0">
+          <div class="red-color small-font" style="margin-right:10px" tappable (click)="onClickRemoveImageCMNDForce()">Xoá</div>
+          <div class="green-color small-font" (click)="onClickAddImageCMNDForce()" tappable>Sửa</div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <div class="a1-relative imageCMND" [hidden]="!imageCMNDForce || imageCMNDForce.length == 0" text-center>
+      <div class="img-container background-image" [ngStyle]="{'background-image':'url('+getNormalizeImage(imageCMNDForce)+')'}"></div>
+    </div>
+
+    <ion-row align-items-center class="padding-6">
+      <ion-col col-8 style="padding-left: 0;">
+        <div class="semi-font gray-color a1-nowrap">Ảnh CMND mặt sau</div>
+      </ion-col>
+      <ion-col col-4 text-right>
+        <ion-icon (click)="onClickAddImageCMNDBack()" tappable name="image" [hidden]="imageCMNDBack && imageCMNDBack.length > 0"></ion-icon>
+        <div class="a3-container a3-items-center a3-justify-end" [hidden]="!imageCMNDBack || imageCMNDBack.length == 0">
+          <div class="red-color small-font" style="margin-right:10px" tappable (click)="onClickRemoveImageCMNDBack()">Xoá</div>
+          <div class="green-color small-font" (click)="onClickAddImageCMNDBack()" tappable>Sửa</div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <div class="a1-relative imageCMND" [hidden]="!imageCMNDBack || imageCMNDBack.length == 0" text-center>
+      <div class="img-container background-image" [ngStyle]="{'background-image':'url('+getNormalizeImage(imageCMNDBack)+')'}"></div>
+    </div>
+
+  </div>
+
+
+
+  <ion-item *ngIf="mListItemModel.length > 0 && isEdit" no-border>
+    <ion-label class="small-font">Tôi cam kết thông tin đã khai là đúng</ion-label>
+    <ion-checkbox (ionChange)="getValidate($event)" [(ngModel)]="isRequired"></ion-checkbox>
+  </ion-item>
+
+  <div id="save" class="a3-container a3-justify-center" *ngIf="mListItemModel.length > 0 && isEdit">
+    <button ion-button [disabled]="!isValidate" (click)="onClickSave()">Lưu</button>
+  </div>
+
+</ion-content>

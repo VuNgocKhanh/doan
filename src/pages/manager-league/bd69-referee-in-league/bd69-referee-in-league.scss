@@ -1,0 +1,56 @@
+page-bd69-referee-in-league {
+    .nothing {
+        height: 100%;
+        width: 100%;
+        background-image: url("../../assets/imgs/nothing.png");
+    }
+    .text-show {
+        margin-top: 12vh;
+    }
+    .background-header {
+        background-color: #39414E;
+    }
+    .animated {
+        animation-duration: 300ms;
+    }
+    // .searchbar-ios{
+    //     background: white;
+    //     border-radius: 5px;
+    // }
+    .btn-search {
+        // background: #4A575F;
+        color: white;
+        border-radius: 5px;
+        width: 50px;
+    }
+    // .searchbar-ios .searchbar-search-icon{
+    //     top: 14px;
+    // }
+    // .searchbar-ios .searchbar-input{
+    //     height: 4rem;
+    // }
+    // .toolbar .searchbar-ios .searchbar-input{
+    //     border-radius: 10px;
+    //     color: white;
+    // }
+    .btn-add-remove {
+        background: #39414E;
+        color: white;
+        text-transform: capitalize;
+        width: 70px;
+        &.remove {
+            background: map-get($map: $colors, $key: danger);
+        }
+    }
+    .item-md .item-button {
+        padding: 15px 1.6em;
+    }
+    .item-ios .item-button {
+        padding: 8px 1em;
+    }
+    .btn-add {
+        background: #39414E;
+        color: white;
+        text-transform: capitalize;
+    }
+}

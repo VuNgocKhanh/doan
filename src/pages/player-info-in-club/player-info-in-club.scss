@@ -1,0 +1,46 @@
+page-player-info-in-club {
+    .player-avatar {
+        height: 80px;
+        width: 80px;
+        margin: 16px auto;
+      }
+      .player-name {
+        padding: 0 10px 6px 10px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+      .player-club-name {
+        padding: 0px 10px 6px 10px;
+        white-space: nowrap;
+      }
+      .player-position-name{
+        padding: 0px 10px 16px 10px;
+        white-space: nowrap;
+      }
+      .league-name {
+        padding: 16px 10px 16px 10px;
+        font-weight: bold;
+      }
+      .space{
+        height: 10px;
+        background: whitesmoke;
+      }
+      .number-card{
+          margin: 0 6px;
+      }
+      .margin-top{
+          margin-top: 4px;
+      }
+      .item-icon{
+          color: map-get($map: $appColors, $key: green);
+          ion-icon{
+              font-size: 2em;
+          }
+      }
+      .font-bold{
+          font-weight: bold;
+      }
+      .rotate-45deg{
+        //   transform: rotate(15deg);
+      }
+}

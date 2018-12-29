@@ -1,0 +1,32 @@
+list-request {
+    .logo-avatar{
+        height: 48px;
+        width: 48px;
+    }
+    .btn{
+        padding: 4px 10px;
+        border-radius: 5px;
+        font-size: map-get($map: $appSizes, $key: small);
+        min-width: 60px;
+        text-align: center;
+        &.btn-accept{
+            background: map-get($map: $appColors, $key: green);
+            color: white;
+            border: 1px solid map-get($map: $appColors, $key: green);
+        }
+        &.btn-deline{
+            border: 1px solid gray;
+            color: map-get($map: $appColors, $key: black);
+            margin-left: 10px;
+        }
+    }
+    .m-list{
+        border-bottom: .55px solid map-get($map: $appColors, $key: lightgray);
+        padding: 6px 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .m-list:last-child{
+        border-bottom: none;
+    }
+}   

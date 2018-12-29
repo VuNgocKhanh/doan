@@ -1,0 +1,37 @@
+page-bd69-list-rounds {
+    .btn-tab{
+        background: #39414E;
+        color: white;
+        font-size: map-get($map: $appSizes, $key: semi);
+        text-transform: unset;
+        opacity: .4;
+        box-shadow: none;
+        height: 2.2em !important; 
+        &.selected{
+            opacity: 1;
+        }
+    }
+    .toolbar-title-md{
+        font-size: 1.6rem;
+    }
+    .toolbar-title-ios{
+        font-size: 1.6rem;
+    }
+    .nothing{
+        height: 70vh;
+        width: 100%;
+        background-image: url("../../assets/imgs/nothing.png");
+    }
+    .text-show{
+        margin-top: 12vh;
+    }
+    .backgroun-whitesmoke{
+        background: whitesmoke;
+        padding: 6px 0;
+    }
+    ion-avatar{
+        // border: 1px solid gray;
+        border-radius: 50%;
+        box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: .2);
+    }
+}

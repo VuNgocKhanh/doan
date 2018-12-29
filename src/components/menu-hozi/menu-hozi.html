@@ -1,0 +1,10 @@
+<!-- Generated template for the MenuHoziComponent component -->
+<div>
+  <div class="a1-nowrap a1-relative hozi-container">
+    <div class="a1-inline-block" *ngFor="let item of menuList" (click)="selectMenu(item)" tappable>
+      <div class="btn " [class.selected]="item.id == menuSelectedID">
+        {{item.name}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+page-match-event-addnew {
+  .a-icon {
+    height: 60px;
+    width: 60px;
+    margin: auto;
+  }
+  .a-name {
+    margin-top: 10px;
+    font-size: 1.4rem;
+  }
+  .a-container {
+    margin-top: 16px;
+    .disable{
+      opacity: .4;
+    }
+  }
+  .font-bold {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  .semi-font {
+    font-size: 1.4rem;
+    color: gray;
+  }
+  ion-label {
+    flex: auto;
+  }
+  .text-input {
+    text-align: right !important;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  .form-container{
+    min-height: 100%;
+    padding-top: 16px;
+  }
+  .list-container{
+    background: white;
+  }
+  .animated{
+    animation-duration: 400ms;
+  }
+}

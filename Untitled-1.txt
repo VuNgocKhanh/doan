@@ -1,0 +1,1 @@
+cordova plugin add cordova-plugin-accountkit --save --variable APP_ID="1092574447561859" --variable APP_NAME="Bongda69" --variable CLIENT_TOKEN="c11ca54e602efe73c4d36f52a72f0e24" --variable API_VERSION="v1.1"

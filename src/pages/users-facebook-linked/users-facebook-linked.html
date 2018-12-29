@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline" class="big-font"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Liên kết mạng xã hội</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row [hidden]="mUser.facebook_id == ''">
+    <ion-col col-3>
+      <ion-avatar class="a3-container-center">
+        <img class="a1-circle" [src]="mUser.avatar">
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-6 class="a3-container a3-justify-start a3-items-center">
+      <div>{{mUser.name}}</div>
+    </ion-col>
+    <ion-col *ngIf="mUser.login_type==0" col-3 class="a3-container-center">
+      <div class="btn btn-cancel small-font" (click)="cancelLinkFacebook()" tappable>Hủy liên kết</div>
+    </ion-col>
+  </ion-row>
+
+  <div [hidden]="mUser.facebook_id != ''" class="a1-fill-parent a3-container-center large-font">
+    <div>
+      <div class="a3-container-center">
+        Tài khoản chưa liên kết!
+      </div>
+      <div class="a3-container-center">
+        <button ion-button outline round (click)="linkFacebook()">Liên kết</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

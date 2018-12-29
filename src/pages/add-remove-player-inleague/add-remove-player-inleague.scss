@@ -1,0 +1,27 @@
+page-add-remove-player-inleague {
+  .player-avatar {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .player-item {
+    margin: 16px;
+    border-bottom: 1px solid lightgray;
+  }
+  .player-item:last-child {
+    border-bottom: none;
+  }
+  .btn-add-remove {
+    background: map-get($map: $appColors, $key: primary);
+    color: white;
+    padding: 10px !important;
+    margin: 0 !important;
+    text-transform: unset !important;
+    &.remove{
+        background: map-get($map: $appColors, $key: red);
+    }
+  }
+}

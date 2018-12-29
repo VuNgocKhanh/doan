@@ -1,0 +1,16 @@
+<!-- Generated template for the FormSelectComponent component -->
+<div>
+  <ion-row align-items-center>
+    <ion-col col-3>
+        <div class="name" *ngIf="name.trim() != ''">{{name}}</div>
+    </ion-col>
+    <ion-col col-8>
+        <ion-select #select [(ngModel)]="mValue">
+            <ion-option value="{{val.id}}" *ngFor="let val of values">{{val.name}}</ion-option>
+          </ion-select>
+    </ion-col>
+    <ion-col col-1 (click)="openSelect()" tappable>
+      <ion-icon name="md-arrow-dropdown"></ion-icon>
+    </ion-col>
+  </ion-row>
+</div>

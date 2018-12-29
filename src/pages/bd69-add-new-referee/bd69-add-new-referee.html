@@ -1,0 +1,49 @@
+<!--
+  Generated template for the Bd69AddNewRefereePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title >Tạo mới trọng tài</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="onClickSave()">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="white-smoke" padding-top padding-bottom>
+    <div class="circle background-image mReferee-avatar" (click)="onClickAvatar()" [ngStyle]="{'background-image': mReferee.avatar ? 'url('+mReferee.avatar+')' : 'url(./assets/imgs/no-image.png)'}"></div>
+    <div class="normal-font" text-center>Upload avatar</div>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Tên</ion-label>
+      <ion-input type="text" placeholder="Nhập tên" [(ngModel)]="mReferee.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Số điện thoại</ion-label>
+      <ion-input type="number" placeholder="Nhập số điện thoại" [(ngModel)]="mReferee.phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Số trận đã tham gia</ion-label>
+      <ion-input type="number"  [(ngModel)]="mReferee.numberMatch"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Số giải đấu đã tham gia</ion-label>
+      <ion-input type="number"  [(ngModel)]="mReferee.numberLeague"></ion-input>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

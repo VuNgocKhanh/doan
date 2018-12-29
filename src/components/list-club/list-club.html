@@ -1,0 +1,22 @@
+<!-- Generated template for the ListClubComponent component -->
+<div>
+  <ion-row *ngFor="let club of mClubs" align-items-center class="mlclub-container" (click)="goClubsDetail(club)" tappable>
+    <ion-col col-3>
+      <div class="circle club-thumnail background-image"
+      [ngStyle]="{'background-image':'url('+club.logo+')'}"></div>
+    </ion-col>
+    <ion-col col-7>
+      <div class="club-name white-color normal-font a1-nowrap a1-textover">
+        {{club.getName()}}
+      </div>
+      <div>
+        {{club.leage_attend}}
+      </div>
+    </ion-col>
+    <ion-col col-2>
+      <div class="small-font white-color a1-nowrap" text-right>
+        <ion-icon name="arrow-forward"></ion-icon>
+      </div>
+    </ion-col>
+  </ion-row>
+</div>

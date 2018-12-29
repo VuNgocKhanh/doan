@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only tapable navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Thêm sân vận động</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row align-items-center>
+        <ion-col col-10>
+            <ion-searchbar #searchBar [(ngModel)]="searchQuery" (keyup.enter)="search()" (ionClear)="clearQuery()"></ion-searchbar>
+        </ion-col>
+        <ion-col col-2>
+            <button ion-button full icon-only (click)="search()" id="btn-search">
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+        </ion-col>
+    </ion-row>
+
+    <div id="result_search" class="a1-padding-left" *ngIf="mStadiumModels.length > 0">
+        Kết quả tìm kiếm : {{number_result}}
+    </div>
+    <ion-list>
+        <ion-item *ngFor="let item of mStadiumModels">
+            <ion-avatar item-start>
+                <img [src]="item.stadium.logo || './assets/imgs/logo-default.jpg'" alt="">
+            </ion-avatar>
+            <div class="a1-relative">
+                <div class="semi-font black-color">{{item.stadium.name}}</div>
+                <div class="gray-color small-font">{{item.stadium.address}}</div>
+            </div>
+            <button ion-button item-end class="button-stadium" [class.remove]="item.checked" (click)="onClickStadium(item)">
+        <span [hidden]="item.checked">Thêm</span>
+        <span [hidden]="!item.checked">Xoá</span>
+      </button>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

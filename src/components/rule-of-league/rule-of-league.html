@@ -1,0 +1,59 @@
+<!-- Generated template for the RuleOfLeagueComponent component -->
+<div>
+    <ion-list>
+        <div style="padding-left: 11px">
+            <form-calendar [name]="'Ngày mở đăng ký'" [disabled]="disabled" [selected]="mRuleOfLeague.getRecordStartDate()" (onDateChange)="getDateStart($event)"></form-calendar>
+            <form-calendar [name]="'Ngày đóng đăng ký'" [disabled]="disabled" [selected]="mRuleOfLeague.getRecordEndDate()" (onDateChange)="getDateEnd($event)"></form-calendar>
+        </div>
+        <div class="space"></div>
+        <ion-item>
+            <ion-label class="semi-font">Số cầu thủ thi đấu trên sân:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Số cầu thủ chơi trên sân" [(ngModel)]="mRuleOfLeague.numberPlayPlayer"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="semi-font">Số thành viên tối đa đăng ký:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Số thành viên tối đa đăng ký" [(ngModel)]="mRuleOfLeague.maxPlayerPerClub"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="semi-font">Số trọng tài mỗi trận:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Số trọng tài" [(ngModel)]="mRuleOfLeague.refereeInMatch"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="semi-font">Số lượt thay người mỗi trận:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Số lượt thay người" [(ngModel)]="mRuleOfLeague.substitue"></ion-input>
+        </ion-item>
+        <div class="space"></div>
+        <ion-item>
+            <ion-label class="semi-font">Số điểm 1 trận thắng:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Số điểm 1 trận thắng" [(ngModel)]="mRuleOfLeague.wonPoint"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="semi-font">Số điểm 1 trận hoà:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Số điểm 1 trận hoà" [(ngModel)]="mRuleOfLeague.drawnPoint"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="semi-font">Số điểm 1 trận thua:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Số điểm 1 trận thua" [(ngModel)]="mRuleOfLeague.lostPoint"></ion-input>
+        </ion-item>
+        <div class="space"></div>
+        <ion-item>
+            <ion-label class="semi-font">Thời gian thi đấu mỗi trận:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Thời gian thi đấu 1 trận" [(ngModel)]="mRuleOfLeague.duration"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="semi-font">Thời gian nghỉ giữa hiệp:</ion-label>
+            <ion-input [disabled]="disabled" type="number" placeholder="Thời gian nghỉ" [(ngModel)]="mRuleOfLeague.break_time"></ion-input>
+        </ion-item>
+        <div class="space"></div>
+        <ion-item>
+            <ion-label class="semi-font">Yêu cầu nộp hồ sơ</ion-label>
+            <ion-checkbox item-end [disabled]="disabled" [(ngModel)]="mRuleOfLeague.record_enable"></ion-checkbox>
+        </ion-item>
+        <div class="space"></div>
+        <ion-item>
+            <ion-label class="semi-font">File điều lệ giải:</ion-label>
+            <ion-icon item-end name="md-add"></ion-icon>
+        </ion-item>
+        <div class="space"></div>
+    </ion-list>
+</div>

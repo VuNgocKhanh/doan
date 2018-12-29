@@ -1,0 +1,10 @@
+<!-- Generated template for the TwoSegmentComponent component -->
+<div>
+  <ion-row align-items-center justify-content-center class="a1-relative">
+    <ion-col col-4 class="col-margin" (click)="select(item)" tappable *ngFor="let item of menus" >
+      <div class="m-item" [class.selected]="item.id == IDSelected">
+        {{item.name}}
+      </div>
+    </ion-col>
+  </ion-row>
+</div>

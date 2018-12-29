@@ -1,0 +1,13 @@
+<!-- Generated template for the ManageLeagueComponent component -->
+<div>
+  <ion-row align-items-center *ngFor="let item of menus" class="m-container" tappable (click)="goToPage(item)">
+    <ion-col col-2 class="menu-icon" text-center>
+      <ion-icon [name]="item.icon"></ion-icon>
+    </ion-col>
+    <ion-col col-8>
+      <div class="a1-nowrap a1-textover menu-name">
+        {{item.name}}
+      </div>
+    </ion-col>
+  </ion-row>
+</div>

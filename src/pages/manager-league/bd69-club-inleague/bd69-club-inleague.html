@@ -1,0 +1,65 @@
+<!--
+  Generated template for the Bd69ClubInleaguePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Danh sách câu lạc bộ</ion-title>
+
+        <ion-buttons right>
+            <button ion-button icon-only (click)="onSelectAddClub()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+        </ion-buttons>
+
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content no-bounce>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div class="empty-state a1-relative" [hidden]="mListClubs.length > 0">
+        <div class="a1-content-bottom a1-absolute">
+            <div padding class="gray-color semi-font" text-center>Giải đấu chưa có câu lạc bộ nào tham gia</div>
+        </div>
+    </div>
+
+    <div [hidden]="mListClubs.length > 0 || isLoadingData" text-center margin-top>
+        <button ion-button class="btn-add-club" (click)="onSelectAddClub()">
+      Thêm câu lạc bộ
+    </button>
+    </div>
+
+    <ion-list>
+        <button ion-item *ngFor="let item of mListClubs; let i = index" class="a1-relative" (click)="selectClub(item)">
+      <div item-start class="stt">
+        {{i+1}}.
+      </div>
+      <ion-avatar item-start>
+        <img src="{{item.logo || './assets/default/club_logo_default.png' }}" alt="">
+      </ion-avatar>
+
+      <ion-label>
+        <div class="normal-font">{{item.name}}</div>
+
+        <div class="gray-color small-font" style="margin-top: 6px;">
+          <span>Lãnh đội: {{item.manager.name || 'N/A'}}</span>
+        </div>
+      </ion-label>
+
+    </button>
+    </ion-list>
+
+
+</ion-content>

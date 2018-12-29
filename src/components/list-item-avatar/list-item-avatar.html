@@ -1,0 +1,10 @@
+<ion-list *ngIf="listItem.length == 0">
+</ion-list>
+
+<ion-list *ngIf="listItem.length !== 0">
+    <button ion-item *ngFor="let donor of listItem">
+                  <ion-avatar item-start><img [src]="donor.logo"></ion-avatar>
+
+      <div>{{donor.name}}</div>
+    </button>
+</ion-list>

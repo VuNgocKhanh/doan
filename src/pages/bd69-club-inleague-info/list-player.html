@@ -1,0 +1,127 @@
+<!--
+  Generated template for the ListPlayerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button icon-only ion-button navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title >Thông tin đội bóng</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content #content class="gray-background">
+
+  <div class="club-cover background-image a1-relative" [ngStyle]="{'background-image': mClub.cover ? 'url('+mClub.cover+')' : 'url(./assets/default/club_cover_default.png)'}">
+    <div class="a1-absolute left-bottom">
+      <div class="a3-container a3-items-center">
+        <div class="club-logo">
+          <img [src]="mClub.logo || './assets/default/club_logo_default.png'" alt="">
+        </div>
+        <div class="club-name">{{mClub.name}}</div>
+      </div>
+    </div>
+
+    <div class="a1-absolute full"></div>
+  </div>
+
+  <div class="tab-container">
+    <div class="mtab" *ngFor="let mTab of mListTabs" tappable (click)="onClickTab(mTab,$event)" [class.selected]="mTab.id == mTabIDSelected">
+      <span>{{mTab.name}}</span>
+    </div>
+    <div class="animated a1-absolute" id="animatedID"></div>
+  </div>
+
+  <div [hidden]="mTabIDSelected > 0" class="info-container">
+
+    <div class="block-container">
+      <ion-list>
+        <ion-item-divider>Thống kê</ion-item-divider>
+        <ion-item *ngFor="let item of mListItems1">
+          <ion-label item-start>{{item.name}}</ion-label>
+          <ion-label item-end text-right class="large-font font-EASportsCoversSC-Bold">{{item.value}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="block-container">
+      <ion-list>
+        <ion-item-divider>Thông tin cơ bản</ion-item-divider>
+        <ion-item *ngFor="let item of mListItems2">
+          <ion-label>{{item.name}}</ion-label>
+          <ion-label text-right class="normal-font font-text" [class.gray-color]="!item.value">{{item.value ?
+            item.value : 'Chưa cập nhật'}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </div>
+
+  <div [hidden]="mTabIDSelected < 2">
+    <div class="match-container" *ngFor="let match of mListMatch" (click)="goToMatchInfo(match)" tappable>
+      <ion-row align-items-center justify-content-center>
+
+        <ion-col col-3>
+          <div class="name-club-home" text-nowrap>
+            {{match.getHomeClub().getName() || 'N/A'}}
+          </div>
+        </ion-col>
+
+        <ion-col col-6 text-center>
+          <div class="a3-container a3-items-center a3-justify-between">
+            <div class="logo-club">
+              <img [src]="match.mHomeClub.logo || './assets/default/club_logo_default.png'" alt="">
+            </div>
+
+            <div class="time-start font-EASportsCoversSC-Bold" *ngIf="match.state == 0" text-nowrap>{{match.getTimeStartDate()
+              | date : 'HH:mm'}}</div>
+            <div class="time-start font-EASportsCoversSC-Bold" *ngIf="match.state != 0" text-nowrap>{{match.mHomeClub.goal}}
+              - {{match.mAwayClub.goal}}</div>
+
+            <div class="logo-club">
+              <img [src]="match.mAwayClub.logo || './assets/default/club_logo_default.png'" alt="">
+            </div>
+          </div>
+        </ion-col>
+
+
+        <ion-col col-3>
+          <div class="name-club-away" text-nowrap>
+            {{match.mAwayClub.name || 'N/A'}}
+          </div>
+        </ion-col>
+
+      </ion-row>
+
+      <div class="small-font gray-color" style="margin-top: 10px" text-center>
+        {{match.getTimeStartDate() | date: 'dd/MM/yyyy'}}, {{match.stadiumName || 'N/A'}}
+      </div>
+    </div>
+  </div>
+
+  <div [hidden]="mTabIDSelected != 1" margin-top>
+    <div class="gray-color large-font" *ngIf="listPlayer.length == 0" text-center padding>Chưa cập nhật</div>
+    <ion-list>
+      <ion-item *ngFor="let player of mListPlayerModels; let i = index" (click)="onClickImage(player)">
+        <div item-start class="stt">{{i+1}}.</div>
+        <ion-avatar item-start>
+          <img [src]="player.player.avatar || './assets/default/player_avatar_default.png'" alt="">
+        </ion-avatar>
+        <ion-label>
+          <div class="large-font player-name">{{player.player.name}}</div>
+          <div class="small-font gray-color" style="margin-top: 6px">
+            <span>{{player.player.positionID | positionPlayer}} - {{player.player.shirt_number > -1 ?
+              player.player.shirt_number : 'N/A'}}</span>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

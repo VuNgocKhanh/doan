@@ -1,0 +1,19 @@
+league-manager-option {
+    .p-league-logo{
+        height: 48px;
+        width: 48px;
+        margin: auto;
+        img{
+            max-height: 48px;
+        }
+    }
+    .p-league-name{
+        font-size: 1.8rem;
+    }
+    .list{
+        margin-top: 10px;
+    }
+    .sub-title{
+        margin-top: 6px;
+    }
+}

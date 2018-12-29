@@ -1,0 +1,53 @@
+calendar {
+  $height: 40px;
+  .m-scroll-container {
+    overflow: scroll;
+    height: $height * 3;
+    line-height: $height;
+  }
+  .m-item {
+    height: $height;
+    color: white;
+    text-align: center;
+    line-height: $height;
+    opacity: .4;
+    &.selected {
+      color: #FEE161;
+      font-weight: bold;
+      opacity: 1;
+    }
+  }
+  .m-dot {
+    height: $height;
+    color: white;
+    text-align: center;
+    line-height: $height;
+    margin: $height * 2 $height / 2 0 $height / 2;
+    font-weight: bold;
+  }
+  .m-header {
+    text-align: center;
+    height: $height;
+    line-height: $height;
+    color: #FEE161;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  .time-container {
+    width: 100%;
+    background: #293041;
+    padding: 10px 16px;
+    border-radius: 10px;
+  }
+  .btn-save{
+    min-width: 50%;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #FEE161;
+    margin-top: 16px;
+    border: 1px solid #FEE161;
+    height: 2.4em;
+  }
+  //===========
+}

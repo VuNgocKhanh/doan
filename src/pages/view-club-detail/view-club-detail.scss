@@ -1,0 +1,27 @@
+page-view-club-detail {
+    ion-content.content {
+        background: whitesmoke;
+    }
+    .club-profile {
+        border-bottom: none;
+    }
+    .club-cover {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 20rem;
+    }
+    .club-logo {
+        height: 4rem;
+        width: 4rem;
+    }
+    .item-detail {
+        padding: 5px;
+        border-bottom: 1px solid lightgray;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .item-detail:last-child {
+        border-bottom: none;
+    }
+}

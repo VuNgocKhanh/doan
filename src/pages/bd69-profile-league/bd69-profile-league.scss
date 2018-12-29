@@ -1,0 +1,92 @@
+page-bd69-profile-league {
+  .header-list {
+    background: whitesmoke;
+    color: black;
+    padding: 10px 0 10px 16px;
+  }
+
+  .league-cover {
+      width: 90vw;
+      height: 60vw;
+      margin: 10px auto;
+      border-radius: 5px;
+  }
+
+  ion-textarea{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+  }
+
+  .text-input{
+    padding: 10px 10px 10px 16px !important;
+  }
+  .logo-box {
+    height: 80px;
+    width: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border: 1px solid gray;
+    border-radius: 50%;
+
+  }
+  .item-inner {
+    padding-right: 0 !important;
+  }
+  .logo{
+    color: gray;
+  }
+  .item {
+    padding-left: 0 !important;
+    border-bottom: .55px solid #f5f1f1 !important;
+  }
+  .text-input {
+    margin: 13px 8px !important;
+    font-size: map-get($map: $appSizes, $key: semi);
+  }
+  form-calendar .fc-container {
+    border-bottom: .55px solid #f5f1f1 !important;
+
+    padding-left: 3px;
+  }
+  .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+    color: map-get($map: $appColors, $key: black);
+    
+  }
+  .fc-name {
+    font-size: map-get($map: $appSizes, $key: semi);
+
+  }
+  .select-text{
+    font-size: map-get($map: $appSizes, $key: semi);
+  }
+  .a1-content-center{
+    top: 100%;
+  }
+  .cover-box{
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+  }
+  .chage-cover{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 32px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    opacity: .6;
+    border-radius: 5px;
+  }
+}

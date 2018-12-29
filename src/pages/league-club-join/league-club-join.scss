@@ -1,0 +1,9 @@
+page-league-club-join {
+        .btn {
+            padding: 4px 12px;
+            border-radius: 20px;
+            background-color: map-get($map: $appColors, $key: red);
+            white-space: nowrap;
+            color: map-get($map: $appColors, $key: white) !important;
+        }
+}

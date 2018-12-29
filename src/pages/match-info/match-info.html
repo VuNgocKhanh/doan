@@ -1,0 +1,183 @@
+<!--
+  Generated template for the MatchInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Chi tiết trận đấu</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="background-header a1-relative">
+
+    <div class="backdrop a1-absolute a1-z-1"></div>
+
+    <div class="overlay a1-z-10 a1-relative">
+        <ion-row padding-left padding-top padding-right align-items-center>
+            <ion-col col-4>
+              <div class="a3-container-center a3-column">
+                <div class="club-logo background-image circle" [ngStyle]="{'background-image':mMatch.mHomeClub.logo ? 'url('+mMatch.mHomeClub.logo+')' : 'url(./assets/default/club_logo_default.png)'} "></div>
+                <div class="club-name normal-font">{{mMatch.mHomeClub.name || 'FC Bgate'}}</div>
+              </div>
+            </ion-col>
+            <ion-col col-4>
+              <div class="time-start white-color" [hidden]="mMatch.state > 0" text-center>{{mMatch.getTimeStartDate() | date:'HH : mm' }}</div>
+              <div class="time-start white-color" [hidden]="mMatch.state < 1" text-center>{{mMatch.mHomeClub.goal}} - {{mMatch.mAwayClub.goal}}</div>
+            </ion-col>
+            <ion-col col-4>
+              <div class="a3-container-center a3-column">
+                <div class="club-logo background-image circle" [ngStyle]="{'background-image':mMatch.mAwayClub.logo ? 'url('+mMatch.mAwayClub.logo+')' : 'url(./assets/default/club_logo_default.png)'} "></div>
+                <div class="club-name normal-font">{{mMatch.mAwayClub.name || 'FC Bgate'}}</div>
+              </div>
+            </ion-col>
+          </ion-row>
+      
+          <div class="match-date small-font" text-center>{{mMatch.getTimeStartDate() | date:'HH:mm, dd/MM/yyyy' }}</div>
+          <div class="semi-font match-stadium" text-center>{{mStadium.name || 'Sân vận động Mỹ Đình'}}</div>
+    </div>
+    
+  </div>
+
+
+  <div class="tabs-container" text-nowrap>
+    <div class="mtab" *ngFor="let tab of mTabs" [class.selected]="tab.id == mTabIDSelected" (click)="onClickTab(tab)" tappable>
+      <div class="a3-container-center a1-relative">
+        <ion-icon [name]="tab.icon"></ion-icon>
+        <span class="tab-name">{{tab.name}}</span>
+        <div class="circle a1-absolute live-circle" *ngIf="tab.id == 0 && mMatch.state == 1"></div>
+      </div>
+    </div>
+  </div>
+
+  <div padding-left padding-right [hidden]="mMatch.state == 0 || mMatch.state == 3 || !isRoleEdit || mTabIDSelected > 0 || mMatchEvents.length > 0">
+    <button ion-button full icon-right class="btn-add-event" (click)="onClickStartMatch()">
+      Thêm sự kiện bắt đầu
+      <ion-icon name="ios-play"></ion-icon>
+    </button>
+  </div>
+
+  <div [hidden]="mTabIDSelected > 0">
+
+    <div class="empty-state background-image a1-relative" *ngIf="mMatchEvents.length == 0">
+      <div class="a1-absolute a1-content-bottom">
+        <span [hidden]="mMatch.state > 0 && mMatch.state < 3">Trận đấu chưa diễn ra</span>
+        <span [hidden]="mMatch.state < 3">Trận đấu đã bị huỷ</span>
+        <span [hidden]="mMatch.state == 3 || mMatch.state == 0">Chưa cập nhật diễn biến</span>
+      </div>
+    </div>
+
+    <ion-list>
+      <div *ngFor="let event of mMatchEvents; let i = index">
+        <ion-row align-items-center class="row-event" [class.smoke]="i%2 == 1" *ngIf="event.clubID == mMatch.homeID && event.type < 6">
+          <ion-col col-4>
+            <div class="event-name">
+              <span *ngIf="event.type == 3">OG</span>{{event.name}}
+            </div>
+          </ion-col>
+          <ion-col col-1>
+            <div class="event-icon">
+              <ion-icon name="{{event.type | eventType}}" [ngClass]="event.type | eventColor"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col col-2 text-center>
+            <div class="time">{{event.time}}'</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row align-items-center class="row-event" [class.smoke]="i%2 == 1" *ngIf="event.clubID == mMatch.awayID && event.type < 6">
+          <ion-col col-2 offset-5 text-center>
+            <div class="time">{{event.time}}'</div>
+          </ion-col>
+          <ion-col col-1>
+            <div class="event-icon">
+              <ion-icon name="{{event.type | eventType}}"  [ngClass]="event.type | eventColor"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col col-4>
+            <div class="event-name">
+              <span *ngIf="event.type == 3">OG</span>{{event.name}}
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="event.type > 5" class="row-event special" [class.smoke]="i%2 == 1">
+          <ion-col col-12 text-center>
+            <div [innerHtml]="event.name" class="event-name"></div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-list>
+  </div>
+
+  <div [hidden]="mTabIDSelected != 1">
+
+    <ion-row align-items-center class="bg-smoke">
+      <ion-col col-6 text-center style="border-right: 1px solid lightgray;">
+        <div class="btn-club-name" [class.selected]="mClubSelectedIndex == 1" (click)="onClickClub(1)">{{mMatch.getHomeClub().name || 'Chưa cập nhật'}}</div>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <div class="btn-club-name" [class.selected]="mClubSelectedIndex == 2" (click)="onClickClub(2)">{{mMatch.getAwayClub().name || 'Chưa cập nhật'}}</div>
+      </ion-col>
+    </ion-row>
+   
+
+    <div class="gray-color large-font" [hidden]="mListFromStart.length > 0" margin-top padding text-center>Chưa cập nhật</div>
+    <div class="normal-font" [hidden]="mListFromStart.length == 0" padding>
+      <strong>Đội hình chính</strong>
+    </div>
+
+    <ion-list [hidden]="mListFromStart.length == 0">
+      <ion-item *ngFor="let player of mListFromStart">
+        <ion-avatar item-start>
+          <img [src]="player.avatar || './assets/default/player_avatar_default.png'" alt="">
+        </ion-avatar>
+
+        <ion-label>
+          <div class="normal-font">
+            <strong>{{player.name}}</strong>
+          </div>
+          <div class="gray-color semi-font">
+            {{player.positionID | positionPlayer}} - {{player.shirt_number > -1 ? player.shirt_number : 'Chưa cập nhật'}}
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="normal-font" [hidden]="mListFromStart.length == 0" padding>
+      <strong>Đội hình dự bị</strong>
+    </div>
+
+    <ion-list [hidden]="mListFromStart.length == 0">
+      <ion-item *ngFor="let player of mListFromOther">
+        <ion-avatar item-start>
+          <img [src]="player.avatar || './assets/default/player_avatar_default.png'" alt="">
+        </ion-avatar>
+
+        <ion-label>
+          <div class="normal-font">
+            <strong>{{player.name}}</strong>
+          </div>
+          <div class="gray-color semi-font">
+            {{player.positionID | positionPlayer}} - {{player.shirt_number > -1 ? player.shirt_number : 'Chưa cập nhật'}}
+          </div>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

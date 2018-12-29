@@ -1,0 +1,66 @@
+<!--
+  Generated template for the Bd69ManagerMatchesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Trận đấu & kết quả</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="onSelectAddMatch()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="a-scroll-container" text-nowrap>
+    <div class="a-item" *ngFor="let option of mListFillter" (click)="onClickOptionFillter(option,$event)" [class.item-disabled]="option.disable" [class.selected]="mIDSelected == option.id">
+      {{option.name}}
+    </div>
+  </div>
+
+  <div class="space"></div>
+
+  <div [hidden]="mIDSelected > 2">
+    <div *ngIf="mListFixtures.length == 0">
+      <div class="empty-state a1-relative">
+        <div class="a1-absolute a1-content-bottom" text-center>Không có trận đấu</div>
+      </div>
+    </div>
+
+    <div [hidden]="mListFixtures.length == 0">
+      <div *ngFor="let fixture of mListFixtures">
+        <matches-result *ngIf="fixture.matches.length > 0" [fixture]="fixture" [role]="'1'" (onSelectMore)="onClickMatch($event)"></matches-result>
+      </div>
+    </div>
+  </div>
+
+  <div [hidden]="mIDSelected < 3">
+    <div *ngFor="let fixture of mListFixturesName">
+      <matches-result [mFixturesName]="fixture" [role]="'1'" (onSelectMore)="onClickMatch($event)"></matches-result>
+    </div>
+  </div>
+
+
+  <ion-infinite-scroll *ngIf="nextPage >= page && nextPage > -1" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

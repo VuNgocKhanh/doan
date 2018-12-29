@@ -1,0 +1,43 @@
+<!--
+  Generated template for the MatchEventAddnewSelectPlayerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Chọn cầu thủ</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="doSearchPlayer()"></ion-searchbar>
+
+  <ion-list radio-group  margin-top [(ngModel)]="mPlayerSelected">
+    <ion-item *ngFor="let player of mListPlayerFillter" >
+      <ion-avatar item-start>
+        <img [src]="player.avatar || './assets/default/player_avatar_default.png'" alt="">
+      </ion-avatar>
+      <ion-label>
+        {{player.name || 'N/A'}}
+      </ion-label>
+      <ion-radio item-end [value]="player"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <div text-center>
+    <button ion-button class="btn-save" icon-right (click)="onClickSave()">
+      Chọn cầu thủ
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+    </button>
+  </div>
+</ion-footer>

@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Bd69AddClubPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Tạo câu lạc bộ</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="a1-relative" style="padding-top: 16px;" (click)="onClickLogo()" tappable>
+        <div class="club-logo circle background-image a1-relative" [ngStyle]="{'background-image': mClub.logo ? 'url('+getNormalizeImage()+')' : 'url(./assets/default/club_logo_default.png)'}"></div>
+        <div class="gray-color normal-font" text-center style="margin-top: 6px">Logo</div>
+    </div>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Tên câu lạc bộ</ion-label>
+            <ion-input placeholder="Tên câu lạc bộ" [(ngModel)]="mClub.name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Slogan của câu lạc bộ</ion-label>
+            <ion-input placeholder="Slogan câu lạc bộ" [(ngModel)]="mClub.slogan"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Mô tả chung</ion-label>
+            <ion-textarea placeholder="Mô tả về câu lạc bộ" rows="2" [(ngModel)]="mClub.description"></ion-textarea>
+        </ion-item>
+
+    </ion-list>
+    <ion-row class="a3-container-center">
+        <button class="btn-create" ion-button (click)="createClub()">Tạo câu lạc bộ</button>
+    </ion-row>
+</ion-content>

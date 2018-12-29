@@ -1,0 +1,28 @@
+form-select {
+    ion-select{
+        max-width: 100%;
+        padding: 0 !important;
+        display: block;
+    }
+    .item-cover{
+        position: relative;
+        display: none;
+    }
+    .name{
+        white-space: nowrap;
+    }
+    .select-icon{
+        display: none;
+    }
+    .select-icon-inner{
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .select-text{
+        text-align: right;
+    }
+    .row{
+        padding: 1rem 0;
+    }
+}

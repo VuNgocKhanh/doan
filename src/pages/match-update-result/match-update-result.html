@@ -1,0 +1,41 @@
+<!--
+  Generated template for the MatchUpdateResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Cập nhật kết quả trận đấu</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="onClickCheckmark()">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list margin-top padding-left padding-right>
+    <ion-item no-padding>
+      <ion-label stacked>{{mMatch.getHomeClub().getName()}}</ion-label>
+      <ion-input type="number" [(ngModel)]="mMatch.homeGoal"></ion-input>
+    </ion-item>
+    <ion-item no-padding margin-top>
+      <ion-label stacked>{{mMatch.getAwayClub().getName()}}</ion-label>
+      <ion-input type="number" [(ngModel)]="mMatch.awayGoal"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div class="gray-color normal-font" padding-left margin-top>Ngày thi đấu: {{ mMatch.getTimeStartDate() | date: 'dd / MM / yyyy' }}</div>
+  <div class="gray-color normal-font" margin-top padding-left>Địa điểm : {{mStadium.name}}</div>
+</ion-content>

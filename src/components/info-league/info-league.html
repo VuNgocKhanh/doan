@@ -1,0 +1,39 @@
+<!-- Generated template for the InfoLeagueComponent component -->
+<div>
+  <div class="cover-box" [ngStyle]="{'background-image':'url('+getNormalizeCover()+')'}">
+    <div (click)="onClickAvatar()" tappable class="logo-box" [ngStyle]="{'background-image': 'url('+getNormalizeAvatar()+')' }">
+      <div>
+        <ion-icon name="camera"></ion-icon>
+      </div>
+    </div>
+    <div class="chage-cover" (click)="onClickCover()">
+      <ion-icon name="camera"></ion-icon>
+    </div>
+  </div>
+  <ion-list style="padding: 10px">
+
+    <ion-item [hidden]="newLeague.leagueID > -1">
+      <ion-label style="padding-left: 8px" class="semi-font">Tên:</ion-label>
+      <ion-input text-right style="padding-right: 10px" placeholder="Tên giải đấu" type="text" [(ngModel)]="newLeague.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="padding-left: 8px" class="semi-font">Câu lạc bộ:</ion-label>
+      <ion-input text-right style="padding-right: 10px" placeholder="Số câu lạc bộ tham gia" type="number" (input)="inputNumber()"
+        [(ngModel)]="newLeague.numberClub"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="padding-left: 8px" class="semi-font">Loại giải đấu</ion-label>
+      <ion-select [(ngModel)]="newLeague.type">
+        <ion-option value="0">Phủi</ion-option>
+        <ion-option value="1">Cup</ion-option>
+        <ion-option value="2">League</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <form-calendar [name]="'Ngày bắt đầu'" [selected]="newLeague.getTimeStartDate()" (onDateChange)="getTimeStart($event)"></form-calendar>
+    <form-calendar [name]="'Ngày kết thúc'" [selected]="newLeague.getTimeEndDate()" (onDateChange)="getTimeEnd($event)"></form-calendar>
+  </ion-list>
+
+</div>

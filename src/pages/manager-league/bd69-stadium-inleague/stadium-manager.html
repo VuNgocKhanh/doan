@@ -1,0 +1,52 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+                <ion-icon name="ios-arrow-back-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-title>Quản lí sân bóng</ion-title>
+
+        <ion-buttons right>
+            <button ion-button icon-only (click)="onClickAddStadiumIntoLeague()">
+                <ion-icon name="md-add"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <!-- <ion-searchbar [(ngModel)]="searchQuery" (ionClear)="onClearQuer()" (keyup.enter)="onClickSearch()"></ion-searchbar> -->
+
+
+    <ion-list>
+        <button ion-item *ngFor="let stadium of mListStadium; let i = index" (click)="onClickStadiumInLeague(stadium)">
+                <div item-start class="stt">
+                        {{i+1}}.
+                    </div>
+            <ion-avatar item-start>
+                <img [src]="stadium.logo || './assets/default/stadium_logo_default.png'">
+            </ion-avatar>
+            <div>
+                <div class="semi-font">{{stadium.name}}</div>
+                <!-- <div class="small-font">{{stadium.address}}</div> -->
+            </div>
+        </button>
+    </ion-list>
+
+    <div class="empty-state a1-relative" [hidden]="mListStadium.length > 0">
+        <div class="a1-absolute a1-content-bottom gray-color" padding text-center>Không có sân vận động nào</div>
+    </div>
+
+    <ion-infinite-scroll *ngIf="nextPage > page" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,15 @@
+manage-league {
+    .menu-icon{
+        color: map-get($map: $appColors, $key: secondary);
+    }
+    .menu-name{
+        color: white;
+    }
+    .m-container{
+        padding: 10px 0;
+        border-bottom: 1px solid rgba($color: map-get($map: $appColors, $key: secondary), $alpha: 0.1);
+    }
+    .m-container:last-child{
+        border: none;
+    }
+}

@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Form hồ sơ</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="onClickDetailProfile(item)">
+      {{item.name}}
+    </button>
+    </ion-list>
+</ion-content>

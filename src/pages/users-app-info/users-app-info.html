@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+                <ion-icon name="ios-arrow-back" class="big-font"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Thông tin ứng dụng</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="a1-padding a3-container-center">
+        <div class="app-logo">
+            <img src="./assets/imgs/appicon.png">
+        </div>
+    </div>
+    <div text-center class="large-font">{{name}}</div>
+    <div text-center padding-bottom class="normal-font">Phiên bản: {{version}}</div>
+
+    <ion-row margin-bottom margin-left class="item" *ngFor="let item of listInfo">
+        <ion-col col-3>
+            <div text-capitalize class="semi-font">{{item.name}}</div>
+        </ion-col>
+        <ion-col col-9>
+            <div class="semi-font">{{item.value}}</div>
+        </ion-col>
+    </ion-row>
+
+    <div text-center class="a1-container-bottom green-color" style="font-style: italic" padding>Design by AppInAsia</div>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+      <ion-icon name="ios-arrow-back"></ion-icon>
+    </button>
+        </ion-buttons>
+        <ion-title>Danh sách nhà tài trợ</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionClear)="clear()" (ionInput)="onInput()" (keyup.enter)="onClickSearch()"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let dornor of mDornorList" (click)="onClickDornor(dornor)">
+
+            <ion-avatar item-start>
+                <img [src]="dornor.logo || './assets/imgs/no-image.png'" alt="">
+            </ion-avatar>
+
+            <ion-label>
+                <div class="normal-font mleague-name">
+                    <strong>{{dornor.name}}</strong>
+                </div>
+
+                <div class="a3-container a3-justify-between a3-items-end">
+                    <div class="sub-title small-font gray-color">
+                        Giải đấu: {{dornor.numberLeague}}
+                    </div>
+                </div>
+
+            </ion-label>
+
+            <ion-label item-end *ngIf="dornor.getLeagueID() == mLeagueID" class="gray-color small-font" text-right>Đã là nhà tài trợ</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <div class="empty-state a1-relative" [hidden]="mDornorList.length > 0">
+        <div class="a1-content-bottom a1-absolute">
+            <div padding class="gray-color semi-font" text-center *ngIf="showTextNoDornor">Chưa có nhà tài trợ trong hệ thống</div>
+            <div padding class="gray-color semi-font" text-center *ngIf="showTextNoResult">Không có kết quả tìm kiếm</div>
+        </div>
+    </div>
+
+    <ion-infinite-scroll *ngIf="nextPage > -1" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

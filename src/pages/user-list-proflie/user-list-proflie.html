@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+                <ion-icon name="ios-arrow-back-outline" class="big-font"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Hồ sơ</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div *ngIf="mListPlayerCards.length == 0">
+        <div class="empty-state a1-relative">
+            <div class="a1-absolute a1-content-bottom gray-color" text-center padding>Bạn chưa tham gia giải đấu nào</div>
+        </div>
+    </div>
+
+    <ion-list margin-top class="padding-res">
+        <player-card *ngFor="let item of mListPlayerCards" [data]="item" (click)="onClickMemberCard(item)"></player-card>
+    </ion-list>
+</ion-content>

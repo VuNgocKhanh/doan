@@ -1,0 +1,4 @@
+<ion-content no-bounce>
+    <div class="backdrop a1-absolute" tappable (click)="closeView()"></div>
+    <calendar [selected]="mCalendarDate" (selectDate)="getSelectedDate($event)"></calendar>
+</ion-content>

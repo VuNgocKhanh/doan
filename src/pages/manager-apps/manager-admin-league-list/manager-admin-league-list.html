@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+      <ion-icon name="ios-arrow-back"></ion-icon>
+    </button>
+        </ion-buttons>
+        <ion-title>Danh sách giải đấu</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <button ion-item no-border detail-none>
+      <ion-avatar item-start>
+        <div class="a1-relative">
+          <img src="{{mUser.getAvatar() || './assets/imgs/no-image.png'}}">
+        </div>
+      </ion-avatar>
+      <ion-label class="larger-font">{{mUser.getName()}}</ion-label>
+    </button>
+
+    <ion-item-divider>
+        Các giải đấu đã tổ chức
+    </ion-item-divider>
+
+    <ion-list>
+        <ion-item *ngFor="let league of mListLeagues; let i = index">
+            <div class="stt" item-start>{{i+1}}.</div>
+            <ion-thumbnail item-start>
+                <img [src]="league.logo || './assets/default/league_logo_default.png'" alt="">
+            </ion-thumbnail>
+
+            <ion-label>
+                <div class="normal-font mleague-name">
+                    <strong>{{league.name}}</strong>
+                </div>
+
+                <div class="sub-title small-font gray-color">
+                    {{league.state | stateLeague}}
+                </div>
+
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <div class="empty-state a1-relative" [hidden]="mListLeagues.length > 0">
+        <div class="a1-absolute bottom gray-color" padding text-center>Chưa tổ chức giải đấu nào!</div>
+    </div>
+
+    <ion-infinite-scroll *ngIf="nextPage >= page" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

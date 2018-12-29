@@ -1,0 +1,12 @@
+form-input {
+    .text-input[disabled]{
+        opacity: 1;
+    }
+    .form-name{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        // color: map-get($map: $appColors, $key: secondary);
+    }
+    
+}

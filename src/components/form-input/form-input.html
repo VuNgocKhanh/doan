@@ -1,0 +1,18 @@
+<!-- Generated template for the FormInputComponent component -->
+<div>
+    <ion-row align-items-center class="fi-container">
+        <ion-col col-3 class="a1-relative">
+            <div class="form-name">{{name}}</div>
+        </ion-col>
+        <ion-col col-8>
+            <ion-input [disabled]="disabled" #input [type]="type" (input)="onInput()" [placeholder]="placeholder" [(ngModel)]="value"></ion-input>
+        </ion-col>
+        <ion-col col-1 (click)="showInput()" *ngIf="!hiddenIcon">
+            <ion-icon name="create" [hidden]="!disabled"></ion-icon>
+            <ion-icon name="ios-document" [hidden]="disabled"></ion-icon>
+        </ion-col>
+        <ion-col col-1 *ngIf="hiddenIcon && important">
+            <ion-icon name="star"></ion-icon>
+        </ion-col>
+    </ion-row>
+</div>

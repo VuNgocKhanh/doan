@@ -1,0 +1,49 @@
+<!-- Generated template for the PlayerCardComponent component -->
+<div style="margin-bottom: 20px;">
+    <div class="card-container a1-relative">
+        <div class="header-card white-color" text-uppercase text-center>thẻ thành viên</div>
+        <div class="sub-title" text-uppercase text-center>
+            {{mDatas.leagueName}}
+        </div>
+
+
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img [src]="mDatas.avatar || './assets/default/player_avatar_default.png'">
+            </ion-thumbnail>
+
+            <div>
+                <ion-row align-items-center>
+                    <ion-col col-4 class="xs-hidden">
+                        <div class="small-font">Họ tên: </div>
+                    </ion-col>
+                    <ion-col col-8>
+                        <div>{{mDatas.playerName}}</div>
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center>
+                    <ion-col col-4 class="xs-hidden">
+                        <div class="small-font">Câu lạc bộ: </div>
+                    </ion-col>
+                    <ion-col col-8>
+                        <div>{{mDatas.clubName}}</div>
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center>
+                    <ion-col col-4 class="xs-hidden">
+                        <div class="small-font">Ngày sinh: </div>
+                    </ion-col>
+                    <ion-col col-8>
+                        <div>{{mDatas.birthDay | playerInfo}}</div>
+                    </ion-col>
+                </ion-row>
+            </div>
+
+        </ion-item>
+
+        <div class="a1-absolute right-bottom">
+            <ion-icon name="ios-checkmark-circle" [hidden]="mDatas.state != 2" class="green-color"></ion-icon>
+            <ion-icon name="ios-close-circle" [hidden]="mDatas.state == 2" class="red-color"></ion-icon>
+        </div>
+    </div>
+</div>

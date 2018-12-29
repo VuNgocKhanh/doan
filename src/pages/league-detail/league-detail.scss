@@ -1,0 +1,194 @@
+page-league-detail {
+    ion-content.content {
+        background: whitesmoke;
+    }
+    .camera {
+        right: 10px;
+        bottom: 10px;
+        padding: 6px 16px;
+        opacity: .6;
+        text-align: center;
+        border-radius: 5px;
+        background: rgba($color: white, $alpha: .6);
+    }
+    .sign-up {
+        border-radius: 5px;
+        padding: 1rem 0;
+        max-width: 60%;
+        margin: auto;
+        margin-top: 16px;
+        background: map-get($map: $appColors, $key: primary);
+        color: white;
+        text-align: center;
+    }
+    .request-up {
+        border-radius: 5px;
+        padding: 1rem 0;
+        max-width: 60%;
+        margin: auto;
+        margin-top: 16px;
+        background: map-get($map: $appColors, $key: green);
+        color: white;
+        text-align: center;
+    }
+    .league-cover {
+        height: 200px;
+        width: 100%;
+    }
+    .league-logo {
+        height: 50px;
+        width: 50px;
+        margin: auto;
+        border: 1px solid gray;
+    }
+    .league-name {
+        text-transform: uppercase;
+    }
+    .padding {
+        padding: 10px;
+    }
+    .league-name-container {
+        padding: 10px 0;
+    }
+    .icon-col {}
+    .title-col {}
+    .description-col {
+        text-align: right;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .white-container {
+        background: white;
+    }
+    .admin-tool {
+        padding: 16px;
+        color: map-get($map: $appColors, $key: secondary);
+        cursor: pointer;
+        transition: 300ms;
+        .right {
+            right: 0;
+            padding: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .admin-tool:active {
+        background: lightgray;
+    }
+    .dornor-logo {
+        height: 50px;
+        width: 50px;
+        margin: 0 auto;
+        &.small {
+            height: 36px;
+            width: 36px;
+        }
+    }
+    .menu-container {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        .menu-item {
+            display: inline-block;
+            padding: 1rem;
+            text-align: center;
+            color: gray;
+            &.selected {
+                color: #37A448;
+            }
+        }
+    }
+    .fake-search {
+        color: rgb(200, 200, 200);
+        border-radius: 20px;
+        padding: 10px 0;
+        background: #292F3A;
+        margin: 6px 1rem;
+    }
+    .table_full {
+        background: #4e9822;
+        border-radius: 20px;
+        padding: 10px 10px;
+        height: auto;
+        width: 80%;
+    }
+    .header-fillter {
+        display: flex !important;
+        justify-content: center !important;
+        background: white !important;
+        border-bottom: 1px solid rgb(236, 236, 236) !important;
+        color: gray !important;
+    }
+    ion-slide {
+        width: 30% !important;
+        margin-right: 20px;
+    }
+    .swiper-slide img {
+        width: 90px !important;
+        height: 90px !important;
+    }
+    .club-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .club {
+        flex: 0 0 auto;
+        margin-right: 15px;
+        width: 100px;
+    }
+    .logo_club {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    .logo_club_attend {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .diamon_dornor {
+        background: red;
+    }
+    .dornor-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .dornor {
+        flex: 0 0 auto;
+        margin-right: 15px;
+        width: 120px;
+    }
+
+    .group-border{
+        height: 3px;
+        width: 100%;
+        background-color: map-get($map: $appColors, $key: green);
+        transition: 100ms;
+        transform: scale(0,1);
+        transform-origin: center;
+    }
+    .is-click{
+        transform: scale(1,1);
+    }
+    .group-title{
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+    .col{
+        padding: 0;
+    }
+
+    ion-label{
+        margin-right: 0 !important;
+    }
+
+    ::-webkit-scrollbar{
+        display: none !important;
+    }
+}

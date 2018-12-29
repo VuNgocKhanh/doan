@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goToSearch()">
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title >Trang cá nhân</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="padding">
+    <button ion-item margin-bottom no-border (click)="goToUserProfile()">
+      <ion-avatar item-start>
+        <div class="a1-relative">
+          <img src="{{mAppModule.getUserManager().getUser().avatar}}">
+          <div class="type a1-absolute a1-bottom a1-right a1-circle">
+            <!-- <ion-icon class="normal-font blue-color" name="logo-facebook"></ion-icon> -->
+            <img *ngIf="mAppModule.getUserManager().getUser().login_type == 1" class="user-type" src="./assets/imgs/facebook.png">
+            <!-- facebook type -->
+            <img *ngIf="mAppModule.getUserManager().getUser().login_type == 0" class="user-type" src="./assets/imgs/phone.png">
+            <!-- phone type -->
+          </div>
+        </div>
+      </ion-avatar>
+      <ion-label class="larger-font">{{mAppModule.getUserManager().getUser().getName()}}</ion-label>
+    </button>
+
+    <button ion-item margin-bottom no-border (click)="onClickManagerLeague()" [hidden]="mAppModule.getUserManager().getUser().role != 1">
+      <ion-icon color="gray" name="bd69-tool" item-start></ion-icon>
+      <ion-label class="semi-font">Ban tổ chức giải đấu</ion-label>
+    </button>
+
+
+    <button ion-item margin-bottom no-border (click)="onClickManagerApps()" [hidden]="mAppModule.getUserManager().getUser().role < 2">
+      <ion-icon color="gray" name="bd69-tool" item-start></ion-icon>
+      <ion-label class="semi-font">Quản trị App</ion-label>
+    </button>
+
+    <ion-list>
+      <button ion-item (click)="goSearchPage('club')">
+        <ion-icon color="orange" name="bd69-club" item-start></ion-icon>
+        <ion-label class="semi-font">Câu lạc bộ</ion-label>
+        <ion-badge item-end color="orange">{{mAppModule.getUserManager().getUser().userStatistic.numberClub}}</ion-badge>
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item (click)="goSearchPage('league')">
+        <ion-icon color="secondary" name="bd69-trophy" item-start></ion-icon>
+        <ion-label class="semi-font">Giải đấu</ion-label>
+        <ion-badge item-end color="secondary">{{mAppModule.getUserManager().getUser().userStatistic.numberLeague}}</ion-badge>
+      </button>
+    </ion-list>
+
+    <button ion-item margin-bottom no-border (click)="onClickProfileUser()">
+      <ion-icon color="pinkviolet" name="bd69-profile" item-start></ion-icon>
+      <ion-label class="semi-font">Hồ sơ</ion-label>
+      <ion-badge item-end color="pinkviolet">{{mAppModule.getUserManager().getUser().userStatistic.numberRecord}}</ion-badge>
+    </button>
+    <ion-list>
+      <button ion-item *ngFor="let item of mList" (click)="onClickOthers(item)">
+        <ion-icon [ngClass]="item.color" name="{{item.icon}}" item-start></ion-icon>
+        <ion-label class="semi-font">{{item.name}}</ion-label>
+      </button>
+    </ion-list>
+    <button ion-item no-border margin-bottom (click)="onClickOthers('Cài đặt')">
+      <ion-icon color="gray" name="bd69-setting" item-start></ion-icon>
+      <ion-label class="semi-font">Cài đặt</ion-label>
+    </button>
+    <button ion-item no-border margin-bottom (click)="logout()">
+      <ion-icon color="red" name="bd69-logout" item-start></ion-icon>
+      <ion-label class="semi-font">Đăng xuất</ion-label>
+    </button>
+  </div>
+  <div id="paddingDisConnect"></div>
+</ion-content>

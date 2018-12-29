@@ -1,0 +1,26 @@
+page-tabs {
+    .tab-button-icon {
+        color: map-get($map: $appColors, $key: secondary) !important;
+        opacity: 1;
+    }
+    .tab-button[aria-selected=true] .tab-button-icon {
+        opacity: 1;
+        color: white !important;
+    }
+    .tabs-ios .tab-button.icon-only {
+        min-height: 56px !important;
+    }
+    .tab-button {
+        min-height: 56px !important;
+    }
+    
+}
+
+.toast-notify{
+    .toast-wrapper{
+        background-color: map-get($map: $appColors, $key: primary);
+        width: auto;
+        margin: 10px;
+        border-radius: 5px;
+    }
+}

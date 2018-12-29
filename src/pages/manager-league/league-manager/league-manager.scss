@@ -1,0 +1,43 @@
+page-league-manager {
+    .toolbar-title-ios{
+        text-align: left;
+        padding-left: 16px;
+    }
+    .space{
+        height: 10px;
+        background: whitesmoke;
+    }
+    .lm-block-league{
+        margin-top: 10px;
+        border-bottom: 1px solid #f4f4f4;
+        padding-bottom: 10px;
+    }
+    .lm-block-league:last-child{
+       border: none;
+    }
+    .searchbar-ios{
+        background: transparent;
+        border: none;
+    }
+    .searchbar-ios .searchbar-input{
+        border: 1px solid gray;
+    }
+
+    .p-league-logo{
+        height: 48px;
+        width: 48px;
+        margin: auto;
+        img{
+            max-height: 48px;
+        }
+    }
+    .p-league-name{
+        font-size: 1.8rem;
+    }
+    .list{
+        margin-top: 10px;
+    }
+    .sub-title{
+        margin-top: 6px;
+    }
+}

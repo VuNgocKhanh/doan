@@ -1,0 +1,17 @@
+page-develop {
+    .scroll-content {
+        padding-top: 80px;
+    }
+    #text {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        padding: 40px 20px;
+    }
+    #button-back {
+        border-radius: 20px;
+        padding: 10px 30px;
+        height: auto;
+    }
+}

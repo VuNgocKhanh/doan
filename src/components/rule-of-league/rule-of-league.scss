@@ -1,0 +1,23 @@
+rule-of-league {
+    .text-input {
+        font-size: map-get($map: $appSizes, $key: semi) !important;
+        text-align: right !important;
+        padding-right: 10px !important;
+    }
+    .space {
+        height: 16px;
+        width: 100%;
+        background: whitesmoke;
+    }
+    .fc-name {
+        // color: gray;
+    }
+    .item-input .label-md,
+    .item-select .label-md,
+    .item-datetime .label-md {
+        color: map-get($map: $appColors, $key: black);
+    }
+    ion-label {
+        color: map-get($map: $appColors, $key: black);
+    }
+}

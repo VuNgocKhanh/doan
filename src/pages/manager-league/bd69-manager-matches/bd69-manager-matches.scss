@@ -1,0 +1,30 @@
+page-bd69-manager-matches {
+  .a-scroll-container {
+    background: white;
+    padding: 12px 0;
+    overflow: auto;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .2);
+    .a-item {
+      display: inline-block;
+      min-width: 33.33333%;
+      text-align: center;
+      color: gray;
+      border-right: 1px solid gray;
+      &.selected {
+        color: #37a485;
+        font-weight: bold;
+      }
+      &.item-disabled{
+        opacity: .4;
+      }
+    }
+    .a-item:last-child {
+      border: none;
+    }
+  }
+  .space {
+    height: 2vh;
+    background: whitesmoke;
+  } //   =?????????
+  
+}

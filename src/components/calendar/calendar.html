@@ -1,0 +1,50 @@
+<!-- Generated template for the CalendarComponent component -->
+<div>
+  <div class="time-container" text-center>
+    <div class="a3-container a3-justify-center">
+      <div class="m-date">
+        <div class="m-header">
+          Ngày
+        </div>
+        <div class="m-scroll-container" id="dateID">
+          <div class="m-item"></div>
+          <div class="m-item" *ngFor="let date of dates" [class.selected]="date == dates[mCenterIndexs[0]]">
+            <span *ngIf="date < 10">0</span>
+            <span>{{date}}</span>
+          </div>
+          <div class="m-item"></div>
+        </div>
+      </div>
+      <div class="m-dot">-</div>
+      <div class="m-month">
+        <div class="m-header">
+          Tháng
+        </div>
+        <div class="m-scroll-container" id="monthID">
+          <div class="m-item"></div>
+          <div class="m-item" *ngFor="let month of months" [class.selected]="month == months[mCenterIndexs[1]]">
+            <span *ngIf="month < 10">0</span>
+            <span>{{month}}</span>
+          </div>
+          <div class="m-item"></div>
+        </div>
+      </div>
+      <div class="m-dot">-</div>
+      <div class="m-year">
+        <div class="m-header">
+          Năm
+        </div>
+        <div class="m-scroll-container" id="yearID">
+          <div class="m-item"></div>
+          <div class="m-item" *ngFor="let year of years" [class.selected]="year == years[mCenterIndexs[2]]">
+            <span *ngIf="min < 10">0</span>
+            <span>{{year}}</span>
+          </div>
+          <div class="m-item"></div>
+        </div>
+      </div>
+    </div>
+
+    <button ion-button class="btn-save" (click)="onClickSave()">OK</button>
+  </div>
+</div>

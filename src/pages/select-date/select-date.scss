@@ -1,0 +1,27 @@
+page-select-date {
+    .scroll-content {
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+    }
+    ion-content.content {
+        background: rgba($color: #000000, $alpha: .6);
+    }
+    .c-container {
+        padding: 0 16px;
+        z-index: 10;
+    }
+    .backdrop {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    } // =====
+    calendar {
+        position: relative;
+        z-index: 100;
+    }
+}

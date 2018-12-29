@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline" class="big-font"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Câu hỏi thường gặp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item detail-push *ngFor="let question of listQuestion" (click)="onClickQuestion(question.content)">
+      <!-- <ion-icon class="red-color" name="ios-help-outline" item-start></ion-icon> -->
+      <div>
+        <div class="normal-font">{{question.title}}</div>
+        <div class="small-font gray-color">{{question.description}}</div>
+      </div>
+      <!-- <ion-icon class="black-color" name="ios-arrow-forward-outline" item-end></ion-icon> -->
+    </ion-item>
+  </ion-list>
+</ion-content>

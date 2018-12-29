@@ -1,0 +1,14 @@
+<!-- Generated template for the ListMemberComponent component -->
+<div>
+  <ion-list>
+    <button ion-item class="member-item" *ngFor="let mPlayer of mListPlayer" (click)="onClickPlayer(mPlayer)">
+      <ion-avatar item-start>
+        <img class="member-cover" [src]="mPlayer.avatar || './assets/default/player_avatar_default.png'">
+      </ion-avatar>
+      <ion-label>
+        <div class="semi-font black-color a1-text-capitalize">{{mPlayer.name}}</div>
+        <div class="gray-color small-font" style="margin-top: 6px">{{mPlayer.getRoleInClub() | roleInClub}}</div>
+      </ion-label>
+    </button>
+  </ion-list>
+</div>

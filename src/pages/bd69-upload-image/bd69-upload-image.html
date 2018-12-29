@@ -1,0 +1,24 @@
+<ion-content no-bounce>
+    <div class="a1-container a3-container-center black-background">
+        <div class="background-image image" [class.avatar]="type == 1" tappable (click)="onClickRefresh()" [ngStyle]="{'background-image':image ? 'url('+getNormalizeImage(image)+')' : 'url(./assets/imgs/no-image.png)'}"></div>
+        <div class="bottom-container a1-absolute">
+            <ion-row align-items-center>
+                <ion-col col-4>
+                    <button ion-button class="btn-close" (click)="onClickClose()">
+                        <ion-icon name="close"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col col-4 text-center>
+                    <button ion-button class="btn-refresh" (click)="onClickRefresh()">
+                        <ion-icon name="refresh"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col col-4 text-right>
+                    <button ion-button class="btn-upload" (click)="onClickUpload()">
+                        Xong
+                    </button>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+</ion-content>

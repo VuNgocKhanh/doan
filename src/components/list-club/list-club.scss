@@ -1,0 +1,17 @@
+list-club {
+    .club-thumnail{
+        height: 50px;
+        width: 50px;
+        margin: 0 auto;
+    }
+    .club-name{
+        padding: 0 10px;
+    }
+    .mlclub-container{
+        padding: 10px 0;
+        border-bottom: 1px solid rgba($color: map-get($map: $appColors, $key: secondary), $alpha: .16);
+    }
+    .mlclub-container:last-child{
+        border: none;
+    }
+}

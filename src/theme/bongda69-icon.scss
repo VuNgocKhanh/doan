@@ -1,0 +1,208 @@
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../assets/fonts/icomoon.eot?11mubg');
+  src:  url('../assets/fonts/icomoon.eot?11mubg#iefix') format('embedded-opentype'),
+    url('../assets/fonts/icomoon.ttf?11mubg') format('truetype'),
+    url('../assets/fonts/icomoon.woff?11mubg') format('woff'),
+    url('../assets/fonts/icomoon.svg?11mubg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="icon"],
+[class*="bd69-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin makeIcon($arg,
+$val) {
+  .bd69-#{$arg}:before,
+  .ion-ios-bd69-#{$arg}:before,
+  .ion-ios-bd69-#{$arg}-outline:before,
+  .ion-md-bd69-#{$arg}:before,
+  .ion-md-bd69-#{$arg}-outline:before {
+    content: $val;
+  }
+}
+
+@include makeIcon(score,
+"\e900");
+@include makeIcon(trophy,
+"\e901");
+@include makeIcon(whistle,
+"\e902");
+@include makeIcon(sheild,
+"\e903");
+@include makeIcon(ball,
+"\e904");
+@include makeIcon(referee,
+"\e905");
+@include makeIcon(score1,
+"\e906");
+@include makeIcon(player,
+"\e907");
+@include makeIcon(star,
+"\e908");
+@include makeIcon(alarm,
+"\e909");
+@include makeIcon(image,
+"\e90a");
+@include makeIcon(calendar,
+"\e90b");
+@include makeIcon(card,
+"\e90c");
+@include makeIcon(question1,
+"\e90d");
+@include makeIcon(diamond,
+"\e90e");
+@include makeIcon(change,
+"\e90f");
+@include makeIcon(facebook,
+"\e910");
+@include makeIcon(stadium,
+"\e911");
+@include makeIcon(file,
+"\e912");
+@include makeIcon(club,
+"\e913");
+@include makeIcon(match-update,
+"\e914");
+@include makeIcon(match-list,
+"\e915");
+@include makeIcon(match-add,
+"\e916");
+@include makeIcon(bell-add,
+"\e917");
+@include makeIcon(setting,
+"\e918");
+@include makeIcon(logout,
+"\e919");
+@include makeIcon(group,
+"\e91a");
+@include makeIcon(home,
+"\e91b");
+@include makeIcon(hourglass,
+"\e91c");
+@include makeIcon(info,
+"\e91d");
+@include makeIcon(lamp,
+"\e91e");
+@include makeIcon(next,
+"\e91f");
+@include makeIcon(penalty,
+"\e920");
+@include makeIcon(question,
+"\e921");
+@include makeIcon(profile,
+"\e922");
+@include makeIcon(tool,
+"\e923");
+@include makeIcon(ball1,
+"\e924");
+@include makeIcon(clock,
+"\e925");
+@include makeIcon(user,
+"\e926");
+
+
+
+// @include makeIcon(menu-trophy,
+// "\e912");
+// @include makeIcon(menu-player,
+// "\e911");
+// @include makeIcon(menu-noti,
+// "\e910");
+
+// @include makeIcon(app-trophy,
+// "\e901");
+// @include makeIcon(app-club1,
+// "\e90e");
+// @include makeIcon(app-sheild,
+// "\e903");
+// @include makeIcon(app-stadium,
+// "\e907");
+// @include makeIcon(app-whistle,
+// "\e902");
+// @include makeIcon(app-diamond,
+// "\e90b");
+// @include makeIcon(app-star,
+// "\e90a");
+// @include makeIcon(app-calendar,
+// "\e904");
+// @include makeIcon(app-calendar1,
+// "\e91b");
+// @include makeIcon(app-score,
+// "\e908");
+// @include makeIcon(app-refer,
+// "\e906");
+// @include makeIcon(app-profile,
+// "\e918");
+// @include makeIcon(app-rule,
+// "\e90c");
+// @include makeIcon(app-player,
+// "\e909");
+// @include makeIcon(app-noti,
+// "\e90d");
+// @include makeIcon(app-club,
+// "\e91c");
+// @include makeIcon(app-turn,
+// "\e928");
+
+
+// @include makeIcon(user-profile,
+// "\e918");
+// @include makeIcon(user-question,
+// "\e919");
+// @include makeIcon(user-info,
+// "\e916");
+// @include makeIcon(user-logout,
+// "\e917");
+// @include makeIcon(user-remind,
+// "\e914");
+// @include makeIcon(user-setting,
+// "\e922");
+// @include makeIcon(user-trophy,
+// "\e923");
+// @include makeIcon(user-tool,
+// "\e91d");
+// @include makeIcon(user-club,
+// "\e915");
+// @include makeIcon(user-facebook,
+// "\e91a");
+
+// @include makeIcon(match-card,
+// "\e91f");
+// @include makeIcon(match-change,
+// "\e920");
+// @include makeIcon(match-finish,
+// "\e921");
+// @include makeIcon(match-goal,
+// "\e924");
+// @include makeIcon(match-penalty,
+// "\e925");
+// @include makeIcon(match-start,
+// "\e926");
+// @include makeIcon(match-time,
+// "\e927");
+// @include makeIcon(match-break,
+// "\e91e");
+// @include makeIcon(match-list,
+// "\e92a");
+// @include makeIcon(match-add,
+// "\e92b");
+// @include makeIcon(match-update,
+// "\e929");
+
+

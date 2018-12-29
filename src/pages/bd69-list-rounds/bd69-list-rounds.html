@@ -1,0 +1,65 @@
+<!--
+  Generated template for the Bd69ListRoundsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back" class="big-font"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Danh sách vòng đấu & bảng đấu</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="onClickAddGroup()">
+        <ion-icon name="md-add" class="big-font"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row style="padding: 6px 0">
+    <ion-col col-4 *ngFor="let item of buttons">
+      <button (click)="onClickTab(item)" ion-button full round class="btn-tab" [class.selected]="idSelected == item.id">{{item.name}}</button>
+    </ion-col>
+  </ion-row>
+
+  <div class="round-container" [hidden]="idSelected == 1">
+    <league-round [rounds]="mRounds" (onSelectRound)="onClickRound($event)" (onAddRound)="onClickAddRound()">
+    </league-round>
+  </div>
+
+  <div class="group-container" [hidden]="idSelected == 0">
+
+    <div class="background-image nothing a3-container-center" [hidden]="mGroups.length > 0">
+      <div class="gray-color large-font text-show" text-center padding-left padding-right>
+        Bạn chưa thêm danh sách bảng đấu vào giải đấu
+      </div>
+    </div>
+
+    <ion-list>
+      <div *ngFor="let item of mGroupModels">
+        <ion-item (click)="onClickGroup(item.group)" class="backgroun-whitesmoke">
+          <ion-icon name="ios-football" item-start></ion-icon>
+          <ion-label>{{item.group.name}}</ion-label>
+          <ion-icon name="ios-more" item-end></ion-icon>
+        </ion-item>
+
+        <ion-list>
+          <ion-item *ngFor="let club of item.clubInGroups" (click)="onClickClubIn(club)">
+            <ion-avatar item-start>
+              <img [src]="club.logo || './assets/default/club_logo_default.png'" alt="">
+            </ion-avatar>
+            <ion-label class="semi-font">{{club.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

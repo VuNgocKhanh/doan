@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ManagerLeagueTablePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Bảng xếp hạng</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div text-center padding margin [hidden]="!isLoadingData">
+      <ion-spinner name="ios" ></ion-spinner>
+  </div>
+
+  <div [hidden]="!isLoadingData && mListClubInLeagues.length > 0">
+    <div class="empty-state a1-relative">
+      <div class="gray-color a1-content-bottom a1-absolute" text-center padding>
+        Giải đấu chưa có câu lạc bộ nào tham gia, Hãy thêm câu lạc bộ vào giải đấu
+      </div>
+    </div>
+  </div>
+
+  <div [hidden]="isLoadingData">
+    <div class="league-name big-font" text-center padding>
+      {{mLeague.name}}
+    </div>
+
+    <div class="gray-color small-font font-helveticaneuelight" text-center padding>
+      Click vào câu lạc bộ để thay đổi thành tích câu lạc bộ
+    </div>
+
+    <bd69-table [mTables]="mListClubInLeagues" (onSelectClub)="onClickClub($event)"></bd69-table>
+  </div>
+</ion-content>

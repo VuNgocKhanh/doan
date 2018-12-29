@@ -1,0 +1,16 @@
+<!-- Generated template for the TopGoalComponent component -->
+<ion-list>
+    <button ion-item *ngFor="let player of mGoalList; let i = index" [class.top_goal]="i==0" (click)="emitEvent(player)">
+        <ion-avatar item-start>
+            <img [src]="player.avatar ? player.avatar : './assets/imgs/avatar-default.jpg'">
+        </ion-avatar>
+        <div class="a1-text-ellipsis">
+            <p class="player_name">{{i+1}}. {{player.player_name}}</p>
+            <p class="club_name a3-container a3-items-center">
+                <img [src]="player.club_logo ? player.club_logo : './assets/imgs/logo_club.png'" class="logo_club">
+                <span class="a1-padding-left-5">{{player.club_name}}</span>
+            </p>
+        </div>
+        <div item-end class="player_goal"> {{player.goal}}</div>
+    </button>
+</ion-list>

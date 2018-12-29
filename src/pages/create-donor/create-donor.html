@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="checkForm()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Thêm mới nhà tài trợ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div id="header" class="a3-container a3-justify-center">
+    <div id="avatar" [ngStyle]="{'background-image': mDonors.logo ? 'url('+getNormalizeImage(mDonors.logo)+')' : 'url(./assets/imgs/no-image.png)'}">
+
+    </div>
+  </div>
+  <div id="info">
+    <div class="a3-container a3-justify-center font-size-16" id="text" (click)="selectLogo()">Logo</div>
+  </div>
+
+  <div>
+    <ion-row>
+      <ion-col col-3 class="a3-container a3-items-center">Tên: </ion-col>
+      <ion-col col-9 class="a3-container a3-items-center">
+        <ion-input [(ngModel)]="mDonors.name"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-3 class="a3-container a3-items-center">Mô tả: </ion-col>
+      <ion-col col-9 class="a3-container a3-items-center">
+        <ion-input [(ngModel)]="mDonors.description"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-3 class="a3-container a3-items-center">Website: </ion-col>
+      <ion-col col-9 class="a3-container a3-items-center">
+        <ion-input [(ngModel)]="mDonors.website"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-3 class="a3-container a3-items-center">Facebook: </ion-col>
+      <ion-col col-9 class="a3-container a3-items-center">
+        <ion-input [(ngModel)]="mDonors.facebook"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-3 class="a3-container a3-items-center">Youtube: </ion-col>
+      <ion-col col-9 class="a3-container a3-items-center">
+        <ion-input [(ngModel)]="mDonors.youtube"></ion-input>
+      </ion-col>
+    </ion-row>
+
+
+  </div>
+
+  <div id="save" class="a3-container a3-justify-center">
+    <button ion-button (click)="saveDonor()">Lưu</button>
+  </div>
+</ion-content>

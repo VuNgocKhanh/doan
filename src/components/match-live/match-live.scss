@@ -1,0 +1,105 @@
+match-live {
+    $height: 66px;
+    .match-container{
+        background: white;
+        margin-bottom: 10px;
+        // background-image: url("../assets/imgs/background-stadium.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    .backdrop{
+        background: rgba($color: #192f3d, $alpha: .4);
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+    .overlay{
+        z-index: 10;
+    }
+    .circle{
+        border-radius: 50%;
+    }
+    .logo-club{
+        height: $height ;
+        width: $height ;
+        margin: auto;
+        img{
+            max-height: $height;
+        }
+    }
+    .name-club{
+        padding-top: 5px;
+        height: 50px;
+        overflow: hidden;
+        font-weight: bold;
+        color: white !important;
+        font-size: map-get($map: $appSizes, $key: large);
+        font-family: "helveticaneuelight" !important;
+    }
+    .height-logo{
+        height: $height;
+    }
+    .live{
+        padding: 4px 12px;
+        color: red;
+        border: 1px solid red;
+        border-radius: 20px;
+        background: white;
+    }
+    .small{
+        height: 8px;
+        width: 8px;
+        background: red;
+        margin-right: 6px;
+        animation: faded ease 800ms infinite;
+    }
+    .match-result{
+        font-weight: bold;
+        font-size: 2.8rem;
+        color: white !important;
+
+    }
+    .league-name{
+        font-weight: bold;
+        font-size: 2rem;
+        color: white !important;
+    }
+    @keyframes faded {
+        from{
+           opacity: 1;
+        }
+        to{
+           opacity: 0;
+        }
+    }
+    .address{
+        color: white !important;
+        font-size: 1.4rem;
+        padding-bottom: 10px;
+        font-family: "helveticaneuelight" !important;
+    }
+
+    @media (max-width: 320px) {
+        .match-result{
+            font-size: 2.2rem !important;
+        }
+        .league-name{
+            font-size: 1.6rem !important;
+        }
+        .logo-club{
+            transform: scale(.9);
+        }
+        .name-club{
+            font-size: 1.4rem !important;
+        }
+        .small-font{
+            font-size: 1rem !important;
+        }
+        .semi-font{
+            font-size: 1.2rem !important;
+        }
+    }
+}

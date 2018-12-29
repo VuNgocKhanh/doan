@@ -1,0 +1,7 @@
+<ion-tabs [selectedIndex]="selectedIndex">
+    <ion-tab [root]="tab1Root" tabIcon="bd69-ball"></ion-tab>
+    <ion-tab [root]="tab2Root" tabIcon="bd69-trophy"></ion-tab>
+    <ion-tab [root]="tab3Root" tabIcon="bd69-alarm" [tabBadge]="notificationUnread > 0 ? notificationUnread: null" tabBadgeStyle="danger" (ionSelect)="resetNotify()">
+    </ion-tab>
+    <ion-tab [root]="tab4Root" tabIcon="bd69-user"></ion-tab>
+</ion-tabs>

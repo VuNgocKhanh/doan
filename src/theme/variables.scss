@@ -1,0 +1,93 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+@import "ionic.globals";
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+// $colors: ( primary: #488aff, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222, orange: #f88d00, pinkviolet: #e45fe9, green: #0cb83f,red: #f00);
+$colors: ( primary: #488aff, secondary: #37A485, red: #f00, yellow: #FEE161, green: #0cb83f, black: #222, lightgray: #F5F4F4, pinkviolet: #e45fe9, blueviolet: #935ce5, orange: #f88d00, blue: #3b7dff, gray: #94979d, toolbar: #39414E);
+$appColors: ( primary: #192F3D, secondary: #37A485, red: #f00, yellow: #FEE161, green: #0cb83f, black: #222, lightgray: #F5F4F4, pinkviolet: #e45fe9, blueviolet: #935ce5, orange: #f88d00, blue: #3b7dff, gray: #94979d, toolbar: #39414E);
+$appSizes: ( big: 2rem, large: 1.8rem, normal: 1.6rem, semi: 1.4rem, small: 1.2rem, supersmall: 1rem);
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+$searchbar-ios-input-clear-icon-color: #c8c8c8;
+$searchbar-ios-input-search-icon-color: #c8c8c8;
+$searchbar-md-input-clear-icon-color: #c8c8c8;
+$searchbar-md-input-search-icon-color: #c8c8c8;
+$searchbar-ios-input-placeholder-color: #c8c8c8;
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+@import "ionic.theme.default";
+@import "bongda69-icon";
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+@import "ionicons";
+// Fonts
+// --------------------------------------------------
+@import "roboto";
+@import "noto-sans";
+@font-face {
+    font-family: "Heiti-TC-Light";
+    src: local("Heiti-TC-Light"), local("Heiti-TC-Light"), url("../assets/fonts/Heiti-TC-Light.woff") format("woff2");
+}
+
+@font-face {
+    font-family: "EASportsCoversSC-Bold";
+    src: url("../assets/fonts/EASportsCoversSC15.woff") format("woff"), /* Modern Browsers */
+    url("../assets/fonts/EASportsCoversSC15.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "helveticaneuelight";
+    src: url("../assets/fonts/helveticaneuelight.woff") format("woff"), /* Modern Browsers */
+    url("../assets/fonts/helveticaneuelight.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NSIntel';
+    src:
+      url('../assets/fonts/NSIntel.ttf?11mubg') format('truetype'),
+      url('../assets/fonts/NSIntel.woff?11mubg') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+$font-family-md-base: "helveticaneuelight";
+
+$font-family-ios-base: "helveticaneuelight";

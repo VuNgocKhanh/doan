@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goToSearch()">
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Bảng tin
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div id="paddingDisConnect"></div>
+
+  <div class="empty-state a1-relative" [hidden]="mListMatch.length > 0">
+    <div class="a1-absolute a1-content-bottom gray-color normal-font" padding text-center>
+      Không có trận đấu nào đang diễn ra
+    </div>
+  </div>
+
+  <div *ngFor="let match of mListMatch" class="match-container" (click)="onClickMatch(match)">
+    <match-live [match]="match"></match-live>
+  </div>
+
+  <ion-infinite-scroll *ngIf="nextpage >= page && nextpage > -1" (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

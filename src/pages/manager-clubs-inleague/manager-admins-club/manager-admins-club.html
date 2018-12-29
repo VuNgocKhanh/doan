@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ManagerAdminsClubPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-title>Quản lý câu lạc bộ</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="onClickLogin()">
+        <ion-icon name="bd69-login"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems()"></ion-searchbar>
+
+  <div class="empty-state a1-relative" [hidden]="mListClubs.length > 0">
+    <div class="a1-absolute a1-content-bottom" text-center>
+      Bạn chưa được cấp quyền lãnh đội ở câu lạc bộ nào !
+    </div>
+  </div>
+
+  <div [hidden]="mListClubs.length == 0">
+    <ion-list>
+      <button ion-item *ngFor="let club of mListClubs" (click)="onClickClub(club)">
+        <ion-avatar item-start>
+          <img [src]="club.mClub.logo || './assets/default/club_logo_default.png'">
+        </ion-avatar>
+
+        <ion-label>
+          <div class="large-font">
+            {{club.mClub.name}}
+          </div>
+          <div class="a3-container a3-items-center">
+            <div class="sub-title small-font gray-color">
+              Giải đấu : {{club.mLeague.name}}
+            </div>
+          </div>
+        </ion-label>
+      </button>
+    </ion-list>
+  </div>
+
+  <!-- <ion-infinite-scroll *ngIf="nextPage >= page && nextPage > -1" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>

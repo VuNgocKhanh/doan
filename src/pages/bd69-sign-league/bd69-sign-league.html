@@ -1,0 +1,27 @@
+<!--
+  Generated template for the Bd69SignLeaguePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <bd69-header [title]="'Đăng ký giải đấu'"></bd69-header>
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content no-bounce>
+  <div class="league-container">
+    <div class="circle background-image league-logo" [ngStyle]="{'background-image': mLeague.logo ? 'url('+mLeague.logo+')' : 'url(./assets/default/league_logo_default.png)'}"></div>
+    <div class="large-font a1-text-uppercase" padding-top>{{mLeague.name}}</div>
+  </div>
+  <info-club-request [presentName]="presentName" [club]="mClubSelected" [leader]="mLeaderSelected" (onSelectClub)="selectedClub()" (onSelectLeader)="selectedLeader()" (onInput)="getInput($event)"></info-club-request>
+
+  <div class="a1-relative" text-center>
+    <button ion-button class="btn btn-submit" (click)="sendRequest()">{{mtext}}</button>
+  </div>
+</ion-content>

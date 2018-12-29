@@ -1,0 +1,34 @@
+page-manager-stadiums {
+    .btn-search{
+        color: white;
+        border-radius: 5px;
+        background: #39414E;
+    }
+    .a-scroll-container{
+        background: whitesmoke;
+        padding: 10px 0;
+        overflow: auto;
+        .a-item{
+            display: inline-block;
+            min-width: 33.33333%;
+            text-align: center;
+            color: gray;
+            border-right: 1px solid gray;
+            &.selected{
+                color: #37a485;
+                font-weight: bold;
+            }
+        }
+        .a-item:last-child{
+            border: none;
+        }
+    }
+    .searchbar-ios{
+        background: transparent;
+        border: none;
+    }
+    .searchbar-ios .searchbar-input{
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+}

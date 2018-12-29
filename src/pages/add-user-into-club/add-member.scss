@@ -1,0 +1,38 @@
+page-add-member {
+    .search-bar{
+        padding: 10px;
+    }
+    .input-box{
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        padding: 0 16px 0 16px;
+    }
+    .search-btn{
+        background-color: whitesmoke;
+        padding:  10px;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+    .member-cover{
+        height: 4rem;
+        width: 4rem;
+        border: 1px solid lightgray;
+        border-radius: 50%;
+    }
+    .search-item{
+        border-bottom: 1px solid lightgray;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 6px 0;
+    }
+    .search-item:last-child{
+        border-bottom: none;
+    }
+    .search-invite{
+        padding: 5px 10px 5px 10px;
+        background-color: black;
+        color: white;
+        border-radius: 16px;
+
+    }
+}

@@ -1,0 +1,43 @@
+<!-- Generated template for the MatchLiveComponent component -->
+<div>
+  <div class="match-container a1-relative" [ngStyle]="{'background-image':mMatch.leagueID >-1 && mMatch.leagueCover.length > 0 ? 'url('+mMatch.leagueCover+')' : 'url(./assets/imgs/match-default.png)'}">
+    <div class="backdrop a1-absolute"></div>
+    <div class="overlay z-10 a1-relative">
+      <div class="league-name" text-center text-uppercase padding>{{mMatch.leagueName}}</div>
+      <ion-row align-items-center>
+        <ion-col col-4 text-center>
+          <div class="logo-club">
+            <img [src]="mMatch.mHomeClub.logo || './assets/default/club_logo_default.png'" alt="">
+          </div>
+          <div class="name-club font-helveticaneuelight">{{mMatch.mHomeClub.name}}</div>
+        </ion-col>
+        <ion-col col-4 text-center>
+          <div class="height-logo">
+            <div class="match-result font-EASportsCoversSC-Bold">
+              {{mMatch.mHomeClub.goal}} - {{mMatch.mAwayClub.goal}}
+            </div>
+          </div>
+
+          <div *ngIf="mMatch.state < 2" class="live a3-container-center font-helveticaneuelight" text-capitalize>
+            <div class="circle small"></div>
+            <span>live</span>
+          </div>
+
+          <div class="small-font white-color font-helveticaneuelight" style="margin-top: 10px">{{mMatch.getTimeStartDate() | date: 'HH:mm - dd/MM/yyyy'}}</div>
+
+        </ion-col>
+        <ion-col col-4 text-center>
+          <div class="logo-club">
+            <img [src]="mMatch.mAwayClub.logo || './assets/default/club_logo_default.png'" alt="">
+          </div>
+          <div class="name-club font-helveticaneuelight">{{mMatch.mAwayClub.name}}</div>
+        </ion-col>
+      </ion-row>
+
+      <div class="address" text-center *ngIf="mMatch.state >= 2">
+        <div class="semi-font font-helveticaneuelight"><span>{{mMatch.stadiumName}}</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+page-bd69-club-inleague-updatemanager {
+    .a-scroll-container{
+        background: whitesmoke;
+        padding: 10px 0;
+        overflow: auto;
+        .a-item{
+            display: inline-block;
+            min-width: 50%;
+            text-align: center;
+            color: gray;
+            border-right: 1px solid gray;
+            &.selected{
+                color: #37a485;
+                font-weight: bold;
+            }
+        }
+        .a-item:last-child{
+            border: none;
+        }
+    }
+}

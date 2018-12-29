@@ -1,0 +1,27 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Chỉnh sửa form hồ sơ</ion-title>
+        <ion-buttons right>
+            <button ion-button (click)="onClickSave()">
+        Lưu
+      </button>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let item of mListItem">
+            <ion-label>{{item.item.name}}</ion-label>
+            <ion-checkbox [(ngModel)]="item.checked"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+</ion-content>

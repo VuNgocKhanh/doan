@@ -1,0 +1,23 @@
+page-bd69-add-new-referee {
+    .mReferee-avatar{
+        height: 120px;
+        width: 120px;
+        margin: 16px auto;
+        border: 1px solid gray;
+    }
+    .white-smoke{
+        background: whitesmoke;
+    }
+    ion-content.content{
+        background: whitesmoke;
+    }
+    .text-input{
+        font-size: 1.45rem !important;
+        padding-left: 10px;
+    }
+    .item-input ion-label{
+        font-size: 1.4rem !important;
+        color: #484747 !important;
+        padding-left: 10px;
+    }
+}

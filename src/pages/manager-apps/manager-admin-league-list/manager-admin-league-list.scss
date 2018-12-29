@@ -1,0 +1,23 @@
+page-manager-admin-league-list {
+    .btn-search {
+        color: white;
+        border-radius: 5px;
+        background: #39414E;
+    }
+    .searchbar-ios {
+        background: transparent;
+        border: none;
+    }
+    .searchbar-ios .searchbar-input {
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+    .bottom {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    .sub-title {
+        margin-top: 6px;
+    }
+}

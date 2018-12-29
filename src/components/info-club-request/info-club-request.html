@@ -1,0 +1,17 @@
+<!-- Generated template for the InfoClubRequestComponent component -->
+<div>
+  <ion-list>
+    <button ion-item (click)="showListClub()" *ngIf="!hiddenClub">
+        <ion-label item-start>Câu lạc bộ:</ion-label>
+        <ion-label class="gray-color">{{mClub.name}}</ion-label>
+    </button>
+    <button ion-item (click)="showListLeader()">
+        <ion-label item-start>Lãnh đội:</ion-label>
+        <ion-label class="gray-color">{{mLeader.name}}</ion-label>
+    </button>
+    <ion-item>
+        <ion-label item-start>Ông bầu :</ion-label>
+        <ion-input [disabled]="disabled" placeholder="{{placeholder}}" (input)="onInput()" [(ngModel)]="presentName"></ion-input>
+    </ion-item>
+  </ion-list>
+</div>

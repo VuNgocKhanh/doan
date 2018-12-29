@@ -1,0 +1,31 @@
+<!-- Generated template for the LeagueManagerOptionComponent component -->
+<div>
+  <ion-row align-items-center (click)="onClickLeagueName()">
+    <ion-col col-3>
+      <div class="p-league-logo">
+        <img [src]="mLeague.logo || './assets/default/league_logo_default.png'" alt="">
+      </div>
+    </ion-col>
+
+    <ion-col col-9>
+      <div class="p-league-name">
+        <strong>{{mLeague.name || 'Chưa cập nhật'}}</strong>
+      </div>
+
+      <div class="a3-container a3-items-end">
+        <div class="sub-title small-font gray-color">
+          Đội bóng: {{mLeague.numberClubJoined}} / {{mLeague.numberClub}} -  {{mLeague.state | stateLeague}}
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <button ion-item *ngFor="let option of mListOptions" (click)="onClickOption(option)">
+      <ion-icon [name]="option.icon" item-start></ion-icon>
+      <ion-label>
+        <div class="normal-font p-option-name">{{option.name}}</div>
+      </ion-label>
+    </button>
+  </ion-list>
+</div>

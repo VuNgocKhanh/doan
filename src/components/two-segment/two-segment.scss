@@ -1,0 +1,21 @@
+two-segment {
+  .col-margin{
+    margin: 0 10px;
+  }
+  .m-item {
+    text-align: center;
+    font-size: map-get($map: $appSizes, $key: semi);
+    border: 1px solid white;
+    color: white;
+    opacity: .4;
+    transition: 200ms;
+    padding: 4px 6px;
+    border-radius: 5px;
+
+    &.selected {
+      opacity: 1;
+      background: white;
+      color: map-get($map: $appColors, $key: primary);
+    }
+  }
+}

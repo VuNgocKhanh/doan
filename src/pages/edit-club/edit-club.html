@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Chỉnh sửa thông tin</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="club-cover background-image a1-relative" [ngStyle]="{'background-image': mData.cover ? 'url('+mData.cover+')' : 'url(./assets/default/club_cover_default.png)' }">
+    <div tappable (click)="onClickCameraCover()" class="a1-absolute camera">
+      <ion-icon name="camera"></ion-icon>
+    </div>
+
+    <div tappable (click)="onClickCameraLogo()" class="club-logo background-image a1-absolute a3-container a3-items-end a3-justify-end"
+      [ngStyle]="{'background-image': mData.logo ? 'url('+mData.logo+')' : 'url(./assets/default/club_logo_default.png)' }">
+      <div class="avatar-camera">
+        <ion-icon name="camera"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <!-- ====head===== -->
+
+  <div class="list-content">
+
+    <div text-center class="large-font black-color" padding-bottom style="font-weight: bold">{{mData.name}}</div>
+    <ion-list>
+      <ion-item>
+        <ion-label item-start class="semi-font gray-color">Slogan</ion-label>
+        <ion-input type="text" [(ngModel)]="mData.slogan" placeholder="Slogan của câu lạc bộ"></ion-input>
+      </ion-item>
+      <ion-item margin-top>
+        <ion-label item-start class="semi-font gray-color">Mô tả</ion-label>
+        <ion-textarea rows="4" [(ngModel)]="mData.description" placeholder="Mô tả về câu lạc bộ"></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div id="save" class="a3-container a3-justify-center">
+    <button ion-button (click)="onClickSave()">Lưu</button>
+  </div>
+</ion-content>

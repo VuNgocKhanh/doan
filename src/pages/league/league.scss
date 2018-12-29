@@ -1,0 +1,26 @@
+page-league {
+    .league-state {
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        &.incoming {
+            color: map-get($map: $appColors, $key: red);
+        }
+        &.began {
+            color: map-get($map: $appColors, $key: green);
+        }
+        &.gray {
+            color: gray;
+        }
+    }
+    .text-container {
+        padding: 16px 10px 10px 16px;
+        background: white;
+    }
+    .league-container {
+        margin-bottom: 10px;
+    }
+    ion-content.content {
+        background-color: whitesmoke;
+    }
+}

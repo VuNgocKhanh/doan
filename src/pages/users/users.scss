@@ -1,0 +1,24 @@
+page-users {
+  ion-content.content {
+    background: whitesmoke;
+  }
+  
+  .user-profile {
+    border-bottom: none;
+  }
+  .league-item{
+    border-bottom: .55px solid #f5f1f1;
+    box-shadow: none !important;
+  }
+  .type{
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        border: 2px solid white;
+  }
+  .user-type{
+    height: 100% !important;
+    width: 100% !important;
+  }
+  
+}

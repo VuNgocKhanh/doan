@@ -1,0 +1,14 @@
+list-member {
+  .member-item {
+    border-bottom: 1px solid map-get($map: $appColors, $key: lightgray);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 6px 0;
+  }
+  .member-item:last-child {
+    border-bottom: none;
+  }
+  .member-cover{
+    max-width: 48px;
+  }
+}

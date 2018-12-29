@@ -1,0 +1,89 @@
+page-bd69-search {
+    .searchbar-input {
+        border-radius: 20px !important;
+        background: white !important;
+        height: 3.5rem !important;
+        font-size: map-get($map: $appSizes, $key: semi) !important;
+        color: black;
+    }
+    .searchbar-md .searchbar-search-icon {
+        top: 8px;
+    }
+    .fillter-container {
+        padding: 10px 0;
+        overflow: auto;
+    }
+    .item-fillter {
+        padding: 10px 16px;
+        border: 1px solid gray;
+        border-radius: 20px;
+        margin: 0 10px;
+        color: gray;
+        &.selected {
+            color: map-get($map: $appColors, $key: green);
+            border-color: map-get($map: $appColors, $key: green);
+        }
+    }
+    .searchbar-ios .searchbar-input {
+        color: black;
+        padding: 6px 45px;
+    }
+    .searchbar-md .searchbar-input {
+        color: black;
+        padding: 6px 45px;
+    }
+    .avatar {
+        height: 48px;
+        width: 48px;
+    }
+    .mtext {
+        padding: 4px 12px;
+        white-space: nowrap;
+        &.btn-attend {
+            background: map-get($map: $appColors, $key: primary);
+            color: white;
+            border-radius: 20px;
+        }
+    }
+    .row {
+        border-bottom: .55px solid map-get($map: $appColors, $key: lightgray);
+    }
+    .padding-10 {
+        padding: 10px;
+    }
+    .input::-moz-placeholder {
+        color: white !important; // opacity: .4;
+    }
+    .input:-ms-input-placeholder {
+        color: white !important; // opacity: .4;
+    }
+    .input::-webkit-input-placeholder {
+        color: white !important; // opacity: .4;
+    }
+    .btn-search {
+        padding: 6px 10px !important;
+        background: map-get($map: $appColors, $key: green);
+        height: 28px;
+        .button-inner {
+            ion-icon {
+                font-size: 1.4em;
+                padding: 0 0.3em;
+            }
+        }
+    }
+    .btn-back {
+        padding: 6px !important;
+        font-size: 1.2rem;
+        .button-inner {
+            ion-icon {
+                font-size: 1.8em;
+                padding: 0 0.3em;
+            }
+        }
+    }
+    .btn-cancel{
+        background: map-get($map: $appColors, $key: red);
+        color: white;
+        border-radius: 20px;
+    }
+}

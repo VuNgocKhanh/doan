@@ -1,0 +1,29 @@
+<ion-row align-items-center class="club-item" *ngFor="let player of listPlayer; let i = index">
+  <ion-col col-3>
+    <div class="avatar-player circle background-image" [ngStyle]="{'background-image':'url('+player.cover+')'}"></div>
+  </ion-col>
+  <ion-col col-8>
+    <div class="player-name normal-font white-color a3-container" [class.player-manage]="player.manage==1">
+      {{player.name}} <span class="hide-c" [class.player-leader]="player.lead==1">&ensp;(C)</span>
+    </div>
+    <div class="a3-container a3-items-end white-color row-2">
+      <div class="a3-container a3-items-end a3-item">
+        <div class="secondary-color small-font a1-nowrap">
+          <span>{{title_position}}:</span>&ensp;
+        </div>
+        <div class="semi-font a1-nowrap">
+          <span>{{player.position}}</span>
+        </div>
+      </div>
+
+      <div class="a3-container a3-items-end a3-item">
+        <div class="secondary-color small-font a1-nowrap">
+          <span>{{title_number_player}}:</span>&ensp;
+        </div>
+        <div class="semi-font">
+          <span>{{player.number}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-col>
+</ion-row>

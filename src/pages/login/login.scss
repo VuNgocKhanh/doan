@@ -1,0 +1,39 @@
+page-login {
+    ion-content.content{
+        background: map-get($map: $appColors, $key: primary);
+    }
+    .logo-app{
+        text-align: center;
+        padding: 16px;
+        margin-top: 20vh;
+    }
+    .btn-container{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        top: 10vh;
+        .btn-phone{
+            background: #02B21F;
+        }
+        .btn-facebook{
+            background: #2F61BE;
+            margin-top: 5vh;
+        }
+        .btn{
+            color: white;
+            min-width: 60%;
+            text-transform: uppercase;
+            height: 4.6rem;
+        }
+    }
+
+    .app-footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 16px;
+        border-top: 4px solid #4CD964;
+        color: #94979D;
+    }
+}

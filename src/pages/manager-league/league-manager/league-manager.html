@@ -1,0 +1,53 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-title>Ban tổ chức giải đấu</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <div padding-top padding-bottom>
+        <button ion-item no-border (click)="goToUserProfile()">
+            <ion-avatar item-start>
+                <div class="a1-relative">
+                    <img src="{{mUser.getAvatar() || './assets/imgs/no-image.png'}}">
+                </div>
+            </ion-avatar>
+            <ion-label class="larger-font">{{mUser.getName() || 'Chưa cập nhật'}}</ion-label>
+        </button>
+        <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="doSearchLeague()" (keyup.enter)="doSearchLeague()"></ion-searchbar>
+    </div>
+
+    <div class="space"></div>
+
+    <div class="lm-block-league" *ngFor="let league of mListLeaguesFillter" (click)=" onClickLeague(league)" tappable>
+        <ion-row align-items-center>
+            <ion-col col-3>
+                <div class="p-league-logo">
+                    <img [src]="league.logo || './assets/default/league_logo_default.png'" alt="">
+                </div>
+            </ion-col>
+
+            <ion-col col-9>
+                <div class="p-league-name">
+                    <strong>{{league.name || 'Chưa cập nhật'}}</strong>
+                </div>
+
+                <div class="a3-container a3-items-end">
+                    <div class="sub-title small-font gray-color">
+                        Đội bóng: {{league.numberClubJoined}} / {{league.numberClub}} - {{league.state | stateLeague}}
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+
+    </div>
+
+
+    <div class="empty-state a1-relative" *ngIf="mListLeaguesFillter == 0">
+        <div class="a1-content-bottom a1-absolute">
+            Bạn chưa tổ chức giải đấu nào
+        </div>
+    </div>
+</ion-content>

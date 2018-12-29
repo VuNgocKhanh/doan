@@ -1,0 +1,38 @@
+page-manager-app {
+    .a-icon {
+        height: 60px;
+        width: 60px;
+        margin: auto;
+        ion-icon {
+            font-size: 2.4em;
+        }
+    }
+    .col {
+        margin: 10px 0;
+    }
+    .a-name {
+        margin-top: 10px;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+    }
+    .a-container {
+        .disable {
+            opacity: .4;
+        }
+    }
+    .font-bold {
+        font-weight: bold;
+        font-size: 1.6rem;
+    }
+    .semi-font {
+        font-size: 1.4rem;
+        color: gray;
+    }
+    ion-label {
+        flex: auto;
+    }
+    .space {
+        height: 10px;
+        background: whitesmoke;
+    }
+}

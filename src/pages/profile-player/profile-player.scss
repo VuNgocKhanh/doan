@@ -1,0 +1,102 @@
+page-profile-player {
+    .tab-title{
+        padding: 10px 0;
+        color: gray;
+        font-weight: bold;
+    }
+
+    .is-click{
+        color: black
+    }
+    .linenear-background{
+        background: linear-gradient(to right, #40474B,#2D3336);
+        .user-avatar{
+            height: 110px;
+            width: 110px;
+            margin: auto;
+            img{
+                border-radius: 5px;
+                max-height: 110px;
+                max-width: 110px;
+            }
+        }
+        .user-name{
+            font-weight: bold;
+            font-size: 1.6rem;
+            color: white;
+            text-align: center;
+        }
+    }
+    .tab-club-name{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: black;
+    }
+    .tab-league-league-name{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: black;
+    }
+    .tab-league-club-name{
+        color: black;
+        font-size: 1.4rem;
+    }
+
+    // .list-item{
+    //     border-bottom: 1px solid lightgrey;
+    // }
+    // .list-item:last-child{
+    //     border-bottom: none;
+    // }
+
+    .tab-container {
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden; 
+        padding: 10px 0;
+        background: white;
+        position: relative;
+        .mtab {
+          // position: relative;
+          display: inline-block;
+          padding: 6px 12px;
+          text-align: center;
+          min-width: 33.333333%;
+          max-width: 33.333333%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          background: white;
+          font-size: map-get($map: $appSizes, $key: large);
+          opacity: .4; //   border-radius: 20px;
+          //   margin-left: 10px;
+          //   border: 1px solid;
+          color: #39414E;
+          font-size: 1.6rem;
+          &.selected {
+            opacity: 1;
+            color: #39414E; // color: map-get($map: $appColors, $key: green); 
+            // border-bottom: 2px solid;
+            // font-weight: bold;
+          }
+        }
+        .animated {
+          //   display: none;
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          width: 33.3333333%;
+          background: #39414E;
+          transition: 100ms;
+          &.selected-0 {
+            transform: translateX(0);
+          }
+          &.selected-1 {
+            transform: translateX(100%);
+          }
+          &.selected-2 {
+            transform: translateX(200%);
+          }
+        }
+      }
+}

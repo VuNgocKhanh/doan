@@ -1,0 +1,29 @@
+page-search-club-league {
+    .list-devider{
+        background: #EAEAEA;
+        color: black;
+        padding: 16px 0 16px 16px;
+    }
+    .btn-fillter{
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 12px;
+    }
+    .fake-search{
+        color: rgb(200, 200, 200);
+        border-radius: 20px;
+        padding: 10px 0;
+        background: white;
+        margin: 0 1rem;
+    }
+
+    .type{
+        height: 16px;
+        width: 16px;
+    }
+    .user-type{
+        height: 100% !important;
+        width: 100% !important;
+    }
+}

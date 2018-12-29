@@ -1,0 +1,16 @@
+page-profile-list {
+    .toolbar-content,
+    .toolbar-content-md {
+        display: flex !important;
+    }
+    ion-icon {
+        color: white;
+        font-size: 2.2em;
+    }
+    ion-list {
+        padding-top: 20px;
+    }
+    ion-toolbar {
+        min-height: 55px !important;
+    }
+}

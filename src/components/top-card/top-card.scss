@@ -1,0 +1,37 @@
+top-card {
+    .top_card {
+        .player_name {
+            font-weight: bold;
+            font-size: 1.7rem;
+        }
+    }
+    .logo_club {
+        width: 20px;
+        height: 20px;
+    }
+    .player_name {
+        font-size: 1.6rem;
+        color: black;
+    }
+    .yellow-card {
+        background: map-get($map: $appColors, $key: yellow);
+        color: black;
+    }
+    .red-card {
+        background: map-get($map: $appColors, $key: red);
+        ;
+        color: white;
+    }
+    .club_name {
+        font-size: 1.3rem;
+    }
+
+    .no-yellow-card {
+        background-color: white;
+        color: white;
+    }
+    .no-red-card {
+        background-color: white;
+        color: white;
+    }
+}

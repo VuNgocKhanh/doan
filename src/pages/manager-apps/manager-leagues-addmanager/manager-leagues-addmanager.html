@@ -1,0 +1,45 @@
+<!--
+  Generated template for the ManagerLeaguesAddmanagerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Cập nhật ban tổ chức</ion-title>
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content >
+    <ion-searchbar #searchBar [(ngModel)]="searchQuery" (ionInput)="doSearchLocal()" (keyup.enter)="onClickSearch(true)"></ion-searchbar>
+
+    <div text-left padding margin-bottom style="background: whitesmoke">Kết quả tìm kiếm: {{searchQuery}}</div>
+    <ion-list>
+      <button ion-item *ngFor="let user of mListUser" (click)="onClickUser(user)">
+        <ion-avatar item-start>
+          <img [src]="user.avatar || './assets/default/player_avatar_default.png'" alt="">
+        </ion-avatar>
+        <ion-label>
+          {{user.name}}
+        </ion-label>
+      </button>
+    </ion-list>
+  
+    <div class="empty-state a1-relative" [hidden]="mListUser.length > 0">
+      <div class="a1-absolute bottom gray-color" padding text-center>Kết quả tìm kiếm rỗng</div>
+    </div>
+  
+    <ion-infinite-scroll *ngIf="nextPage >= page" (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

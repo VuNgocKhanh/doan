@@ -1,0 +1,73 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Thêm cầu thủ vào đội bóng</ion-title>
+    </ion-toolbar>
+
+    <div class="a-scroll-container" *ngIf="mClubID > -1" text-nowrap>
+        <div class="a-item" *ngFor="let option of mListFillter" (click)="onClickOptionFillter(option)" [class.selected]="mIDSelected == option.id">
+            {{option.name}}
+        </div>
+    </div>
+</ion-header>
+
+
+<ion-content>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="doSearchLocal()" (keyup.enter)="search(true)" (ionClear)="clearQuery()"></ion-searchbar>
+
+    <div [hidden]="mIDSelected == 1">
+        <ion-list>
+            <button ion-item *ngFor="let player of mListPlayerFillter ; let i = index" (click)="onClickPlayer(player)">
+        <div item-start class="stt">
+          {{i+1}}.
+        </div>
+        <ion-avatar item-start>
+          <img [src]="player.player.avatar || './assets/default/player_avatar_default.png'" alt="">
+        </ion-avatar>
+        <ion-label>
+          <div class="normal-font">{{player.player.name}}</div>
+          <div class="small-font gray-color" style="margin-top: 6px;" [hidden]="!player.isMember">Đã tham gia</div>
+        </ion-label>
+
+      </button>
+        </ion-list>
+    </div>
+
+    <div [hidden]="mIDSelected == 2">
+        <ion-list>
+            <button ion-item *ngFor="let user of mListUser" (click)="onClickUser(user)">
+        <ion-avatar item-start>
+          <img [src]="user.avatar || './assets/default/player_avatar_default.png'" alt="">
+        </ion-avatar>
+        <ion-label>
+          <div class="normal-font">{{user.name}}</div>
+          <div class="small-font gray-color" style="margin-top: 6px">
+            {{user.clubName}}
+          </div>
+        </ion-label>
+      </button>
+        </ion-list>
+    </div>
+
+    <div class="empty-state a1-relative" [hidden]="mListPlayerFillter.length > 0">
+        <div class="a1-content-bottom a1-absolute">
+            <div padding class="gray-color semi-font" text-center>Không có kết quả tìm kiếm</div>
+        </div>
+    </div>
+
+    <div *ngIf="mIDSelected == 1" class="empty-state a1-relative" [hidden]="mListUser.length > 0">
+        <div class="a1-content-bottom a1-absolute">
+            <div padding class="gray-color semi-font" text-center>Không có kết quả tìm kiếm</div>
+        </div>
+    </div>
+
+    <ion-infinite-scroll *ngIf="nextPage >= page && nextPage > -1 && mIDSelected==1" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

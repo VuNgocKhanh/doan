@@ -1,0 +1,57 @@
+<!--
+  Generated template for the ManagerCaptainsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Danh sách lãnh đội</ion-title>
+    </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="doSearchLocal()" (keyup.enter)="onClickSearch(true)"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let player of mListClubManagers; let i = index" (click)="onClickItem(player)">
+            <div class="stt" item-start>{{i+1}}.</div>
+            <ion-avatar item-start>
+                <img [src]="player.avatar || './assets/imgs/no-image.png'" alt="">
+            </ion-avatar>
+
+            <ion-label>
+                <div class="normal-font mleague-name">
+                    <strong>{{player.name}}</strong>
+                </div>
+
+                <!-- <div class="a3-container a3-justify-between a3-items-end">
+                    <div class="sub-title small-font gray-color">
+                        Trận đấu: {{player.numberMatch}}
+                    </div>
+
+                    <div class="sub-title small-font gray-color">
+                        Liên hệ : {{player.phone || 'Chưa cập nhật'}}
+                    </div>
+                </div> -->
+
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <div class="empty-state a1-relative" [hidden]="mListClubManagers.length > 0">
+        <div class="a1-absolute bottom gray-color" padding text-center>Tìm kiếm không có kết quả</div>
+    </div>
+
+    <ion-infinite-scroll *ngIf="nextpage >= page && nextpage > -1" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

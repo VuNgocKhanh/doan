@@ -1,0 +1,49 @@
+<!--
+  Generated template for the AddMemberPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon class="big-font" name="ios-arrow-back-outline"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>{{add_member}}</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionClear)="clearQuery()" [placeholder]="placeholder" type="text" (keyup.enter)="onClickSearchUser()" (ionInput)="onInput()"></ion-searchbar>
+
+    <div padding text-center class="gray-color" *ngIf="isSearchDone && mListUser.length == 0">Không có kết quả tìm kiếm</div>
+
+    <ion-list>
+        <button ion-item *ngFor="let user of mListUser" (click)="onClickUserr(user)">
+      <ion-avatar item-start>
+        <img [src]="user.user.avatar || './assets/default/player_avatar.default.png'" alt="">
+      </ion-avatar>
+      <ion-label>
+        <div>
+            <span>{{user.user.name?user.user.name: 'N/A'}}</span>
+        </div>
+        <div *ngIf ="user.isMember" class="small-font gray-color" style="margin-top: 6px">Đã là thành viên</div>
+      </ion-label>
+    </button>
+    </ion-list>
+
+    <div class="empty-state a1-relative" *ngIf="showEmpty">
+        <div class="a1-content-bottom a1-absolute">
+            <div padding class="gray-color semi-font" text-center>Không có kết quả tìm kiếm</div>
+        </div>
+    </div>
+
+    <ion-infinite-scroll *ngIf="nextPage >= page" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

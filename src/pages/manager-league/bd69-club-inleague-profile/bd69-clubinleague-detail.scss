@@ -1,0 +1,68 @@
+page-bd69-clubinleague-detail {
+  .header-list {
+    background: whitesmoke;
+    color: black;
+    padding: 10px 0 10px 16px;
+  }
+  .btn-add-small{
+    right: 0;
+    padding: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .btn-add {
+    max-width: 50%;
+    margin: auto;
+    padding: 6px;
+    border: 1px solid gray;
+  }
+  .league-container {
+    padding: 16px;
+    text-align: center;
+  }
+  .league-logo {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+  }
+  .right-save {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+      transition: 200ms;
+  }
+  .right-save:active{
+      transform: translateY(-50%) scale(.92);
+  }
+  .player-name{
+    font-weight: bold;
+  }
+  .player-small{
+    margin-top: 6px;
+  }
+  .player-avatar{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .player-item{
+      margin: 16px;
+      border-bottom: 1px solid lightgray;
+  }
+  .player-item:last-child{
+      border-bottom: none;
+  }
+
+  .btn-add-manager{
+    border-radius: 5px;
+    color: gray;
+    border: 1px solid gray;
+  }
+  ion-label{
+    flex: auto;
+  }
+}

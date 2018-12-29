@@ -1,0 +1,96 @@
+<!-- Generated template for the MatchesResultComponent component -->
+<div>
+
+  <div *ngIf="mFixtures">
+    <div class="header-match" text-center padding>
+      {{getDayOfTheWeekName(mFixtures.date.getDay())}}, {{mFixtures.date | date: 'dd/MM/yyyy'}}
+    </div>
+    <div class="white-container">
+      <div class="match-container" *ngFor="let match of mFixtures.matches" (click)="onSelectMore(match)" tappable>
+        <ion-row align-items-center justify-content-center>
+
+          <ion-col col-3>
+            <div class="name-club-home" text-nowrap>
+              {{match.getHomeClub().getName() || 'N/A'}}
+            </div>
+          </ion-col>
+
+          <ion-col col-6 text-center>
+            <div class="a3-container a3-items-center a3-justify-between">
+              <div class="logo-club">
+                <img [src]="match.mHomeClub.logo || './assets/default/club_logo_default.png'" alt="">
+              </div>
+
+              <div class="time-start font-EASportsCoversSC-Bold" *ngIf="match.state == 0" text-nowrap>{{match.getTimeStartDate() | date : 'HH:mm'}}</div>
+              <div class="time-start font-EASportsCoversSC-Bold" *ngIf="match.state != 0" text-nowrap>{{match.mHomeClub.goal}} - {{match.mAwayClub.goal}}</div>
+
+              <div class="logo-club">
+                <img [src]="match.mAwayClub.logo || './assets/default/club_logo_default.png'" alt="">
+              </div>
+            </div>
+          </ion-col>
+
+
+          <ion-col col-3>
+            <div class="name-club-away" text-nowrap>
+              {{match.mAwayClub.name || 'N/A'}}
+            </div>
+          </ion-col>
+
+        </ion-row>
+
+        <div class="small-font gray-color" style="margin-top: 10px" text-center>
+            {{match.stadiumName || 'N/A'}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="mFixturesName">
+    <div class="header-match" text-center padding>{{mFixturesName.name || 'N/A'}}</div>
+
+    <div text-center class="gray-color large-font" *ngIf="mFixturesName.matches.length == 0" padding>Không có trận đấu</div>
+
+    <div class="white-container" *ngIf="mFixturesName.matches.length > 0">
+      <div class="match-container" *ngFor="let match of mFixturesName.matches" (click)="onSelectMore(match)" tappable>
+        <ion-row align-items-center justify-content-center>
+
+          <ion-col col-3>
+            <div class="name-club-home" text-nowrap>
+              {{match.getHomeClub().getName() || 'N/A'}}
+            </div>
+          </ion-col>
+
+          <ion-col col-6 text-center>
+            <div class="a3-container a3-items-center a3-justify-between">
+              <div class="logo-club">
+                <img [src]="match.mHomeClub.logo || './assets/default/club_logo_default.png'" alt="">
+              </div>
+
+              <div class="time-start font-EASportsCoversSC-Bold" *ngIf="match.state == 0" text-nowrap>{{match.getTimeStartDate() | date : 'HH:mm'}}</div>
+              <div class="time-start font-EASportsCoversSC-Bold" *ngIf="match.state != 0" text-nowrap>{{match.mHomeClub.goal}} - {{match.mAwayClub.goal}}</div>
+
+              <div class="logo-club">
+                <img [src]="match.mAwayClub.logo || './assets/default/club_logo_default.png'" alt="">
+              </div>
+            </div>
+          </ion-col>
+
+
+          <ion-col col-3>
+            <div class="name-club-away" text-nowrap>
+              {{match.mAwayClub.name || 'N/A'}}
+            </div>
+          </ion-col>
+
+        </ion-row>
+
+        <div class="small-font gray-color" style="margin-top: 10px" text-center>
+          {{match.getTimeStartDate() | date: 'dd/MM/yyyy'}}, {{match.stadiumName || 'N/A'}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

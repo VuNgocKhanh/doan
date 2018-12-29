@@ -1,0 +1,15 @@
+page-manager-stadiums-addstadium {
+    .club-logo{
+        height: 100px;
+        width: 100px;
+        margin: auto;
+    }
+
+    .btn-create{
+        background: map-get($map: $appColors, $key: primary);
+        border-radius: 32px;
+        color: white;
+        min-width: 50%;
+        margin: 16px auto;
+    }
+}

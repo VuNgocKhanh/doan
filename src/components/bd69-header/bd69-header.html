@@ -1,0 +1,21 @@
+<!-- Generated template for the Bd69HeaderComponent component -->
+<div>
+    <ion-row align-items-center>
+        <ion-col col-1 class="btn" navPop>
+            <ion-icon name="ios-arrow-back-outline"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+            <div class="large-font white-color" text-center *ngIf="title">{{title}}</div>
+            <ion-searchbar *ngIf="searchbar"></ion-searchbar>
+            <div class="fake-searchbar" *ngIf="!title">
+                <div class="placeholder a3-container a3-items-center">
+                    <ion-icon name="ios-search"></ion-icon>
+                    <span style="margin-left: 6px">{{placeholder}}</span>
+                </div>
+            </div>
+        </ion-col>
+        <ion-col col-1 *ngIf="icon_right" class="btn" (click)="onClickRight()">
+            <ion-icon [name]="icon_right"></ion-icon>
+        </ion-col>
+    </ion-row>
+</div>

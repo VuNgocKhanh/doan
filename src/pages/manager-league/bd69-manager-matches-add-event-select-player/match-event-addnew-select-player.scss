@@ -1,0 +1,10 @@
+page-match-event-addnew-select-player {
+  .btn-save {
+    background: map-get($map: $appColors, $key: green);
+    color: white;
+    border-radius: 5px;
+    min-width: 50vw;
+    margin: 16px auto;
+  }
+  
+}

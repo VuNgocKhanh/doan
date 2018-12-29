@@ -1,0 +1,40 @@
+page-bd69-upload-image {
+    .btn-close{
+        background: transparent;
+        box-shadow: none !important;
+        ion-icon{
+            font-size: 1.8em;
+        }
+    }
+    .btn-refresh{
+        background: transparent;
+        box-shadow: none !important;
+        ion-icon{
+            font-size: 1.8em;
+        }
+    }
+    .btn-upload{
+        border-radius: 20px;
+        height: unset;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .image{
+        margin: auto;
+        height: 40vh;
+        width: 100%;
+        &.avatar{
+            height: 180px;
+            width: 180px;
+            border-radius: 50%;
+            border: 1px solid white;
+        }
+    }
+
+    .bottom-container{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 16px 10px;
+    }
+}

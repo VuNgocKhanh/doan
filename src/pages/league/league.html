@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+      
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goToSearch()">
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Giải đấu</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="league-container" *ngFor="let item of mLeagues" (click)="onClickLeague(item)" tappable>
+    <div class="background-image cover-size" [ngStyle]="{'background-image': item.cover ? 'url('+item.cover+')' : 'url(./assets/imgs/background-stadium.jpg)'}"></div>
+
+    <div class="text-container">
+      <div class="small-font league-state " [class.incoming]="item.state == 0" [class.began]="item.state == 1"
+        [class.gray]="item.state > 1">[{{item.state | stateLeague}}]</div>
+      <div class="a1-text-uppercase">
+        {{item.name}}
+      </div>
+      <div class="semi-font gray-color" style="margin-top: 6px;">
+        Từ {{item.getTimeStartDate() | bd69CalendarDate}} đến {{item.getTimeEndDate() | bd69CalendarDate}}
+      </div>
+    </div>
+  </div>
+
+  <div id="paddingDisConnect"></div>
+</ion-content>

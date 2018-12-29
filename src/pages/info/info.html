@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title text-center>
+            Cập nhật thông tin
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="info-user-avatar background-image" [ngStyle]="{'background-image': getNoramlizeString(mUser.avatar) ? 'url('+getNoramlizeString(mUser.avatar)+')' : 'url(./assets/default/player_avatar_default.png)'}" tappable (click)="onClickAvatar()">
+        <!-- <img src="{{getNoramlizeString(mUser.avatar) || './assets/default/player_avatar_default.png'}}" alt=""> -->
+    </div>
+
+    <div style="height: 30px"></div>
+
+    <ion-list margin-top>
+        <ion-item>
+            <ion-label>
+                Tên
+            </ion-label>
+            <ion-input #input [(ngModel)]="mUser.name" text-right></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Ngày sinh</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dateOfBirth"></ion-datetime>
+        </ion-item>
+
+    </ion-list>
+
+    <div class="button-container" text-center margin-top>
+        <button ion-button [disabled]="mUser.name.length == 0" class="btn-update" (click)="onClickUpdate()" color="secondary">Cập nhật</button>
+    </div>
+</ion-content>

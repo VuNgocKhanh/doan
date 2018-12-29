@@ -1,0 +1,20 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-title>Quản lí nhà tài trợ</ion-title>
+        <ion-icon name="md=add"></ion-icon>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+
+        <button ion-item *ngFor="let sponsor of sponsorList">
+                    <ion-avatar><img [src]="sponsor.logo"></ion-avatar>
+
+                    <div>alo</div>
+                </button>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,32 @@
+page-user-list-proflie {
+    ion-content.content {
+        // background: rgba($color: #000000, $alpha: 0.1);
+        // background: whitesmoke;
+    }
+    .card-box {
+        // border: 1px solid #192F3D;
+        border-bottom: 1px solid #c1c3c5;
+        border-top: 1px solid #c1c3c5;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .card-league {
+        padding: 10px 0;
+    }
+    .card-title {
+        padding: 10px 0;
+    }
+    .player-box {
+        padding: 10px 5px;
+    }
+    .player-avatar {
+        height: 72px;
+        width: 60px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .padding-res{
+        padding: 0 4vw;
+    }
+}

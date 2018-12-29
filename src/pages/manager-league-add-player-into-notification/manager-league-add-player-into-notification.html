@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ManagerLeagueAddPlayerIntoNotificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Chọn người nhận thông báo</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="onClickCheckMark()">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchQuery" (keyup.enter)="search(true)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let model of mListPlayerModels;let i = index">
+      <div item-start class="stt">{{i+1}}.</div>
+      <ion-avatar item-start>
+        <img [src]="model.player.avatar || './assets/default/player_avatar_default.png'" alt="">
+      </ion-avatar>
+      <ion-label>
+        <div class="normal-font">
+          {{model.player.name}}
+        </div>
+
+        <div class="semi-font gray-color" style="margin-top: 6px">
+          {{model.player.clubName}}
+        </div>
+      </ion-label>
+      <ion-checkbox item-end [(ngModel)]="model.isSelect" (ionChange)="onChangeSelect($event,model)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll *ngIf="nextPage >= page && nextPage > -1" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="lightgray">
+    <div text-nowrap class="a-scroll-container">
+      <div class="circle a1-inline-block background-image" [ngStyle]="{'background-image': 'url('+player.avatar+')'}" *ngFor="let player of mListPlayers"></div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

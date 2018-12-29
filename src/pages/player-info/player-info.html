@@ -1,0 +1,137 @@
+<!--
+  Generated template for the PlayerInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only navPop>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>Cầu thủ</ion-title>
+        <!-- <ion-buttons right>
+            <button ion-button icon-only>
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+        </ion-buttons> -->
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="circle player-avatar background-image" [ngStyle]="{'background-image': mPlayer.avatar ? 'url('+mPlayer.avatar+')' : 'url(./assets/default/player_avatar_default.png)'}"></div>
+    <div class="player-name big-font" text-uppercase text-center>
+        {{mPlayer.name || 'Chưa cập nhật'}}
+    </div>
+
+    <div class="player-club-name semi-font gray-color" text-uppercase text-center>
+        {{mPlayer.clubName || 'Chưa cập nhật'}}
+    </div>
+
+    <div class="semi-font gray-color player-position-name" text-center>{{mPlayer.positionID | positionPlayer}}</div>
+
+    <div class="space"></div>
+
+    <ion-row align-items-center justify-content-center>
+
+        <ion-col col-4 [hidden]="mPlayer.height == 0">
+            <div text-center>
+                <div class="large-font margin-top font-bold">{{mPlayer.height}}</div>
+                <div class="semi-font gray-color">Chiều cao</div>
+
+            </div>
+        </ion-col>
+        <ion-col col-4 [hidden]="mPlayer.weight == 0">
+            <div text-center>
+                <div class="large-font margin-top font-bold">{{mPlayer.weight}}</div>
+                <div class="semi-font gray-color">Cân nặng</div>
+
+            </div>
+        </ion-col>
+        <ion-col col-4 [hidden]="mPlayer.numberAge == 0">
+            <div text-center>
+                <div class="large-font margin-top font-bold">{{mPlayer.numberAge}}</div>
+                <div class="semi-font gray-color">Tuổi</div>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <div class="space"></div>
+
+    <div class="big-font league-name" text-uppercase text-center>
+        {{mPlayerRecordInLeague.leagueName || 'Chưa cập nhật'}}
+    </div>
+
+
+    <ion-row align-items-center justify-content-center>
+        <ion-col col-4>
+            <div text-center>
+                <div class="item-icon">
+                    <ion-icon name="bd69-ball"></ion-icon>
+                </div>
+                <div class="semi-font gray-color margin-top">Bàn thắng</div>
+                <div class="large-font margin-top font-bold ">{{mPlayer.goal}}</div>
+            </div>
+        </ion-col>
+
+        <ion-col col-4>
+            <div text-center>
+                <div class="item-icon">
+                    <ion-icon name="bd69-assist"></ion-icon>
+                </div>
+                <div class="semi-font gray-color margin-top">Hỗ trợ</div>
+                <div class="large-font margin-top font-bold">{{mPlayer.numberAssists}}</div>
+            </div>
+        </ion-col>
+
+        <ion-col col-4>
+            <div text-center>
+                <div class="item-icon">
+                    <ion-icon name="bd69-stadium"></ion-icon>
+                </div>
+                <div class="semi-font gray-color margin-top">Trận đấu</div>
+                <div class="large-font margin-top font-bold">{{mPlayer.numberPlayed}}</div>
+            </div>
+        </ion-col>
+
+    </ion-row>
+
+
+    <ion-row align-items-center justify-content-center>
+
+        <ion-col col-4>
+            <div text-center>
+                <div class="item-icon">
+                    <ion-icon name="bd69-yellow-card" class="yellow-color"></ion-icon>
+                </div>
+                <div class="semi-font gray-color margin-top">Thẻ vàng</div>
+                <div class="large-font margin-top font-bold ">{{mPlayer.yellow_card}}</div>
+            </div>
+        </ion-col>
+
+        <ion-col col-4>
+            <div text-center>
+                <div class="item-icon">
+                    <ion-icon name="bd69-red-card" class="red-color rotate-45deg"></ion-icon>
+                </div>
+                <div class="semi-font gray-color margin-top ">Thẻ đỏ</div>
+                <div class="large-font margin-top font-bold">{{mPlayer.red_card}}</div>
+            </div>
+        </ion-col>
+
+        <ion-col col-4>
+            <div text-center>
+                <div class="item-icon">
+                    <ion-icon name="bd69-player"></ion-icon>
+                </div>
+                <div class="semi-font gray-color margin-top">Đá chính</div>
+                <div class="large-font margin-top font-bold">{{mPlayer.numberFromTheStart}}/{{mPlayer.numberPlayed}}</div>
+            </div>
+        </ion-col>
+
+
+    </ion-row>
+</ion-content>

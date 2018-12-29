@@ -1,0 +1,22 @@
+<!-- Generated template for the ListRequestComponent component -->
+<div>
+  <div *ngIf="!mListUser || mListUser.length == 0" padding text-center class="gray-color">
+    Không có yêu cầu
+  </div>
+  <div *ngIf="mListUser && mListUser.length > 0">
+    <ion-row *ngFor="let user of mListUser; let i = index" align-items-center class="m-list">
+      <ion-col col-2>
+        <div class="logo-avatar">
+          <img class="circle" [src]="user.avatar || './assets/default/player_avatar_default.png'" alt="">
+        </div>
+      </ion-col>
+      <ion-col col-10 padding-left>
+        <div class="semi-font black-color">{{user.name}}</div>
+        <div class="a3-container a3-items-center" style="margin-top: 6px">
+          <div class="btn btn-accept" (click)="onSelectAccept(user)" tappable>Xác nhận</div>
+          <div class="btn btn-deline" (click)="onDelineAccept(user)" tappable>Xoá</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

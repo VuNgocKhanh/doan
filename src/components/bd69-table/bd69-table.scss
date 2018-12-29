@@ -1,0 +1,80 @@
+bd69-table {
+  .header-table {
+    background: map-get($map: $appColors, $key: yellow);
+    color: #1D1C1C;
+    font-size: map-get($map: $appSizes, $key: small);
+    font-family: "helveticaneuelight" !important;
+    th {
+      padding: 1rem 0;
+    }
+    th:first-child {
+      text-align: center;
+    }
+  }
+  .content-table {
+    border-bottom: 1px solid rgba($color: lightgray, $alpha: .2); // padding-left: 4px;
+    background: white;
+    &.smoke {
+      background: #F8F8F8;
+    }
+    td {
+      min-width: 20px;
+      color: #1D1C1C;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: map-get($map: $appSizes, $key: semi);
+      font-family: "helveticaneuelight" !important;
+    }
+   
+    td:first-child {
+      text-align: center;
+      padding: 1rem 4px;
+    }
+  }
+  .name-club {
+    width: 50%;
+  }
+  .content-table:last-child {
+    border: none;
+  }
+  .mode-table {
+    padding-left: 0px !important;
+  }
+  .logo {
+    height: 20px;
+    width: 20px;
+    margin-left: 6px;
+  }
+  .club-name {
+    margin-left: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 26vw;
+  }
+  .stt {
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .header-group {
+    background: map-get($map: $appColors, $key: green);
+    color: white;
+    font-weight: bold;
+    width: 100vw;
+    padding: 1rem;
+  }
+  .header-fillter {
+    color: black;
+    width: 100vw;
+    padding: 1rem;
+  }
+  .xs-hidden {
+    display: none;
+  }
+  @media (min-width: 568px) {
+    .xs-hidden {
+      display: table-cell;
+    }
+  }
+}
